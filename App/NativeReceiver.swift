@@ -61,8 +61,8 @@ final class NativeReceiver {
     var onZeehoState: ((String) -> Void)?
     private let ninebot = NinebotOutput()
     var onNinebotState: ((String) -> Void)?
-    private let cfmoto5 = CfmotoOutput(name: "cfmoto5")
-    private let cfmoto62 = CfmotoOutput(name: "cfmoto62")
+    private let cfmoto5 = CfmotoEasyConnOutput(name: "cfmoto5")
+    private let cfmoto62 = CfmotoEasyConnOutput(name: "cfmoto62")
     var onCfmotoState: ((String) -> Void)?
     private let tailing = TailingOutput()
     var onTailingState: ((String) -> Void)?
