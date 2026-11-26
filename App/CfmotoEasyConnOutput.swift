@@ -341,7 +341,7 @@ final class CfmotoEasyConnOutput {
                 }
                 let now = ProcessInfo.processInfo.systemUptime
                 let force = queue.sync { forceIDR }
-                guard let frame = queue.sync({ () -> H264EncodedFrame? in
+                guard let frame = queue.sync(execute: { () -> H264EncodedFrame? in
                     guard active, let image = latest else { return nil }
                     return encode(image, at: now, forceKeyframe: force)
                 }) else {
