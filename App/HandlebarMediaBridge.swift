@@ -303,7 +303,7 @@ final class HandlebarMediaBridge: NSObject {
 
     private func routeChanged(_ note: Notification) {
         let session = AVAudioSession.sharedInstance()
-        let oldOutputs = (note.userInfo?[AVAudioSessionRouteChangeOldRouteKey] as? AVAudioSessionRoute)?.outputs ?? []
+        let oldOutputs = (note.userInfo?["AVAudioSessionRouteChangeOldRouteKey"] as? AVAudioSessionRouteDescription)?.outputs ?? []
         guard bikeAudioName(in: session.currentRoute.outputs) != nil,
               bikeAudioName(in: oldOutputs) == nil else { return }
         guard restoresRoute else { return }
