@@ -52,7 +52,7 @@ final class HandlebarMediaBridge: NSObject {
     /// 命令回调：由 UI 层注入，转发给 NativeReceiver.press(.next/.previous/.hookSwitch)。
     var onCommand: ((CarPlayControl) -> Void)?
 
-    private init() {}
+    private override init() {}
 
     // MARK: - 启停（投屏运行期间启用）
 
