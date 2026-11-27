@@ -7,37 +7,21 @@
 // （每按一下系统音量变化 1 步，共 16 步）。iOS 不向第三方 App 开放「拦截音量键」的 API，
 // 只能观察 AVAudioSession.outputVolume 的变化。本模块：
 //   1. KVO 观察音量步进 → 折算成「上/下」按键事件（步进判定同 OpenCfMoto 的 HandlebarVolumeMath）；
-//   2. 把按键映射为媒体命令（默认：上=下一曲、下=上一曲），经 MPRemoteCommandCenter.send()
-//      转发给当前「正在播放」的音乐 App（QQ音乐 / Apple Music 等）；
-//   3. 可选地把音量悄悄复位，避免音量随按键累积变化（MPVolumeView 滑块方式，侧载环境无审核顾虑）。
-//
-// 电话接听说明：iOS 不允许第三方 App 编程接听来电，来电接听请走车机蓝牙 HFP
-// （车机会响铃）或 iPhone 侧边键；通话期间本模块自动忽略按键，防止误切歌。
+//   2. 把按键经 CarPlay HID 媒体键通道发给本机 CarPlay 会话——iPhone 把它当作
+//      CarPlay 硬件的媒体键按下，从而控制当前播放的音乐 App（下一曲/上一曲）；
+//   3. 来电响铃或通话中按下按键 → 发 CarPlay HID 电话 hookSwitch（接听/挂断）；
+//   4. 可选地把音量悄悄复位，避免音量随按键累积变化（MPVolumeView 滑块方式）。
 
 import AVFoundation
 import MediaPlayer
+import CallKit
 
 final class HandlebarMediaBridge {
 
     static let shared = HandlebarMediaBridge()
 
-    enum Action: String {
-        case nextTrack
-        case previousTrack
-        case none
-
-        var label: String {
-            switch self {
-            case .nextTrack: return CWL("下一曲")
-            case .previousTrack: return CWL("上一曲")
-            case .none: return CWL("无动作")
-            }
-        }
-    }
-
     private static let enabledKey = "handlebarEnabled"
-    private static let upKey = "handlebarUpAction"
-    private static let downKey = "handlebarDownAction"
+    private static let swappedKey = "handlebarSwapped"
     private static let restoreKey = "handlebarRestoreVolume"
 
     private var observation: NSKeyValueObservation?
@@ -45,19 +29,18 @@ final class HandlebarMediaBridge {
     /// 忽略音量变化的时间戳（复位音量会再触发 KVO，需自我抑制）。
     private var ignoreUntil: TimeInterval = 0
     private var volumeView: MPVolumeView?
-    private var callObserver: Any?
+    private var callObserver: CXCallObserver?
+    private var incomingCall = false
+    private var onGoingCall = false
 
     var isEnabled: Bool {
         get { UserDefaults.standard.bool(forKey: Self.enabledKey) }
         set { UserDefaults.standard.set(newValue, forKey: Self.enabledKey) }
     }
-    var upAction: Action {
-        get { Action(rawValue: UserDefaults.standard.string(forKey: Self.upKey) ?? "") ?? .nextTrack }
-        set { UserDefaults.standard.set(newValue.rawValue, forKey: Self.upKey) }
-    }
-    var downAction: Action {
-        get { Action(rawValue: UserDefaults.standard.string(forKey: Self.downKey) ?? "") ?? .previousTrack }
-        set { UserDefaults.standard.set(newValue.rawValue, forKey: Self.downKey) }
+    /// true = 上键是上一曲；false（默认）= 上键是下一曲。
+    var swapsDirection: Bool {
+        get { UserDefaults.standard.bool(forKey: Self.swappedKey) }
+        set { UserDefaults.standard.set(newValue, forKey: Self.swappedKey) }
     }
     var restoresVolume: Bool {
         get { UserDefaults.standard.object(forKey: Self.restoreKey) == nil ? true : UserDefaults.standard.bool(forKey: Self.restoreKey) }
@@ -66,6 +49,8 @@ final class HandlebarMediaBridge {
 
     /// 按键事件的回调（用于日志与 UI 提示）。
     var onEvent: ((String) -> Void)?
+    /// 命令回调：由 UI 层注入，转发给 NativeReceiver.press(.next/.previous/.hookSwitch)。
+    var onCommand: ((CarPlayControl) -> Void)?
 
     private init() {}
 
@@ -78,12 +63,18 @@ final class HandlebarMediaBridge {
             guard let self, let new = change.newValue else { return }
             DispatchQueue.main.async { self.volumeChanged(from: self.lastVolume, to: new) }
         }
+        let observer = CXCallObserver()
+        observer.setDelegate(self, queue: .main)
+        callObserver = observer
         log("车把按键桥已启用（音量摇杆 → 切歌）")
     }
 
     func stop() {
         observation?.invalidate()
         observation = nil
+        callObserver = nil
+        incomingCall = false
+        onGoingCall = false
         if isEnabled { log("车把按键桥已停用") }
     }
 
@@ -100,24 +91,18 @@ final class HandlebarMediaBridge {
         let delta = new - old
         guard abs(delta) >= Self.stepSize / 2 else { return }
         let isUp = delta > 0
-        let action = isUp ? upAction : downAction
-        onEvent?("车把「\(isUp ? "上" : "下")」键 → \(action.label)")
-        switch action {
-        case .nextTrack: sendMediaCommand(next: true, name: "下一曲")
-        case .previousTrack: sendMediaCommand(next: false, name: "上一曲")
-        case .none: break
+        if incomingCall {
+            onCommand?(.hookSwitch)
+            onEvent?("车把「\(isUp ? "上" : "下")」键 → 接听来电")
+        } else if onGoingCall {
+            onCommand?(.hookSwitch)
+            onEvent?("车把「\(isUp ? "上" : "下")」键 → 挂断通话")
+        } else {
+            let isNext = isUp != swapsDirection
+            onEvent?("车把「\(isUp ? "上" : "下")」键 → \(isNext ? CWL("下一曲") : CWL("上一曲"))")
+            onCommand?(isNext ? .next : .previous)
         }
         if restoresVolume { DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in self?.restoreVolume(to: old) } }
-    }
-
-    /// 经系统把媒体命令转发给当前「正在播放」的音乐 App。
-    private func sendMediaCommand(next: Bool, name: String) {
-        let center = MPRemoteCommandCenter.shared()
-        let command: MPRemoteCommand = next ? center.nextTrackCommand : center.previousTrackCommand
-        let status = command.send(targets: [])
-        if status == .commandFailed {
-            log("车把切歌（\(name)）未送达：当前没有正在播放的音乐 App")
-        }
     }
 
     // MARK: - 音量复位（MPVolumeView 滑块方式）
@@ -145,5 +130,17 @@ final class HandlebarMediaBridge {
     private func log(_ message: String) {
         onEvent?(message)
         Log.i("Handlebar", message)
+    }
+}
+
+extension HandlebarMediaBridge: CXCallObserverDelegate {
+    func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
+        if call.isOutgoing {
+            onGoingCall = call.hasConnected && !call.hasEnded
+        } else {
+            if call.hasEnded { incomingCall = false; onGoingCall = false }
+            else if call.hasConnected { incomingCall = false; onGoingCall = true }
+            else { incomingCall = true }
+        }
     }
 }

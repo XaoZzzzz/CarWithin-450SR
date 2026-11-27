@@ -1630,7 +1630,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
 
     private func configureHandlebar() {
         handlebarSwitch.isOn = HandlebarMediaBridge.shared.isEnabled
-        handlebarDirectionSwitch.isOn = UserDefaults.standard.bool(forKey: "handlebarSwapped")
+        handlebarDirectionSwitch.isOn = HandlebarMediaBridge.shared.swapsDirection
         handlebarRestoreSwitch.isOn = HandlebarMediaBridge.shared.restoresVolume
         [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch].forEach {
             $0.addTarget(self, action: #selector(handlebarSettingsChanged), for: .valueChanged)
@@ -1640,18 +1640,17 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
             self.handlebarLastEvent = message
             self.log(message)
         }
+        // 车把按键 → CarPlay HID 媒体键 / 电话 hookSwitch。
+        HandlebarMediaBridge.shared.onCommand = { [weak self] control in
+            self?.receiver.press(control)
+        }
     }
 
     @objc private func handlebarSettingsChanged() {
         let bridge = HandlebarMediaBridge.shared
         bridge.isEnabled = handlebarSwitch.isOn
+        bridge.swapsDirection = handlebarDirectionSwitch.isOn
         bridge.restoresVolume = handlebarRestoreSwitch.isOn
-        UserDefaults.standard.set(handlebarDirectionSwitch.isOn, forKey: "handlebarSwapped")
-        // 方向交换通过反转上下动作实现。
-        let up: HandlebarMediaBridge.Action = handlebarDirectionSwitch.isOn ? .previousTrack : .nextTrack
-        let down: HandlebarMediaBridge.Action = handlebarDirectionSwitch.isOn ? .nextTrack : .previousTrack
-        bridge.upAction = up
-        bridge.downAction = down
         // 运行中即时生效。
         bridge.stop()
         if running && bridge.isEnabled { bridge.start() }
@@ -1661,12 +1660,12 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private func handlebarPage() -> SettingsPageController {
         page(CWL("车把按键")) { [unowned self] in
             [
-                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进并转换为切歌命令，转发给当前正在播放的音乐 App。开始投屏后生效。"), [
+                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进并转换为 CarPlay 媒体键，控制当前播放的音乐 App。开始投屏后生效。"), [
                     .control(CWL("音量摇杆转换为切歌"), icon: ("music.note", .systemGreen), handlebarSwitch),
                     .control(CWL("上=上一曲、下=下一曲"), icon: ("arrow.up.arrow.down", .systemBlue), handlebarDirectionSwitch),
                     .control(CWL("切歌后恢复音量"), icon: ("speaker.wave.2", .systemOrange), handlebarRestoreSwitch)
                 ]),
-                SettingsSection(footer: CWL("来电接听不受此功能控制：iOS 不允许第三方 App 接听电话，请用车机蓝牙或 iPhone 侧边键；通话期间按键自动忽略。若切歌时音乐无声，请确认音乐 App 正在播放。"), [
+                SettingsSection(footer: CWL("来电响铃或通话中按下任意方向键 = 接听/挂断（CarPlay 电话键）。按键期间音量会被复位，若不希望可关闭上方的「切歌后恢复音量」。"), [
                     .info(CWL("上次按键"), handlebarLastEvent.isEmpty ? CWL("尚未触发") : handlebarLastEvent)
                 ])
             ]
