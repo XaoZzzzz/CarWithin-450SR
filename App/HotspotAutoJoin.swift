@@ -25,7 +25,7 @@ enum HotspotAutoJoin {
         if open || (password ?? "").isEmpty {
             configuration = NEHotspotConfiguration(ssid: ssid)
         } else {
-            configuration = NEHotspotConfiguration(ssid: ssid, passphrase: password!, encryption: .wpa2)
+            configuration = NEHotspotConfiguration(ssid: ssid, passphrase: password!, isWEP: false)
         }
         configuration.joinOnce = false
         do {
