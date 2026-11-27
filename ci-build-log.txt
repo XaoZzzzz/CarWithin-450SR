@@ -27,11 +27,11 @@ GatherProvisioningInputs
 
 CreateBuildDescription
 
+ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x objective-c -c /dev/null
+
 ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/usr/bin/xcstringstool compile --dry-run --output-directory /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Localization/Localizable.xcstrings
 
 ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x c -c /dev/null
-
-ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x objective-c -c /dev/null
 
 ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -x c -c /dev/null
 
@@ -43,8 +43,8 @@ ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/X
 
 ExecuteExternalTool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
 
-Build description signature: f6017b40485e320f9c567bcd308534cf
-Build description path: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/XCBuildData/f6017b40485e320f9c567bcd308534cf.xcbuilddata
+Build description signature: f1114288ee94fde5d420c8d8b283bd12
+Build description path: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/XCBuildData/f1114288ee94fde5d420c8d8b283bd12.xcbuilddata
 ClangStatCache /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR/TDSCarKit.xcodeproj
     /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache
@@ -156,6 +156,18 @@ CpResource /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Produc
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Support/supporters.json /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app
 
+CpResource /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/private.x963 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BundledIdentity/private.x963 (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BundledIdentity/private.x963 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app
+
+CpResource /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/leaf.cer /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BundledIdentity/leaf.cer (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BundledIdentity/leaf.cer /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app
+
+CpResource /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/certificate.p7b /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BundledIdentity/certificate.p7b (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BundledIdentity/certificate.p7b /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app
+
 CpResource /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/Receiver.en.html /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Localization/Receiver.en.html (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Localization/Receiver.en.html /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app
@@ -228,100 +240,236 @@ EmitSwiftModule normal arm64 (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 Compiling\ Strideable.swift,\ String\ Conversion.swift,\ Subtraction.swift,\ Words\ and\ Bits.swift,\ AppJvmText.swift,\ BikeProfile.swift,\ BikeProfileSelection.swift,\ BikeQR.swift,\ BikeQRParser.swift,\ DashMemory.swift,\ ControlChannelHandler.swift,\ DashProbeClient.swift,\ EasyConnLink.swift,\ GhostTouchFilter.swift,\ InterfaceAddresses.swift,\ LinkOptions.swift,\ LinkSession.swift,\ LinkSessionContext.swift,\ LinkStatsTracker.swift,\ LinkTypes.swift,\ MediaChannelHandler.swift,\ POSIXTransport.swift,\ PureSwiftHuidSigner.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Strideable.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/String\ Conversion.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Subtraction.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Words\ and\ Bits.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/AppJvmText.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeProfile.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeProfileSelection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeQR.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeQRParser.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/DashMemory.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/ControlChannelHandler.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/DashProbeClient.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/EasyConnLink.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/GhostTouchFilter.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/InterfaceAddresses.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkOptions.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkSession.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkSessionContext.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkStatsTracker.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkTypes.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/MediaChannelHandler.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/POSIXTransport.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/PureSwiftHuidSigner.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Strideable.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 Compiling\ CarScreenStore.swift,\ CfmotoEasyConnOutput.swift,\ CfmotoOutput.swift,\ FragmentedMP4.swift,\ H264Surface.swift,\ HTTPSConfiguration.swift,\ HotspotAutoJoin.swift,\ LocalTLSIdentity.swift,\ MediaSockets.swift,\ NativeReceiver.swift,\ NinebotH264Encoder.swift,\ NinebotKCPVideo.swift,\ NinebotOutput.swift,\ NinebotProtocol.swift,\ NinebotUDPSocket.swift,\ PxcConnection.swift,\ ReceiverConfiguration.swift,\ ReceiverViewController.swift,\ SameDeviceProbe.swift,\ SettingsUI.swift,\ SupportViews.swift,\ SupporterDirectory.swift,\ TailingConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/String\ Conversion.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift:241:27: warning: instance method 'lock' is unavailable from asynchronous contexts; Use async-safe scoped locking instead; this is an error in the Swift 6 language mode
+                self.lock.lock(); self.restartTask = nil; self.lock.unlock()
+                          ^
+Foundation.NSLock.lock:2:11: note: 'lock()' declared here
+open func lock()}
+          ^
+/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift:241:69: warning: instance method 'unlock' is unavailable from asynchronous contexts; Use async-safe scoped locking instead; this is an error in the Swift 6 language mode
+                self.lock.lock(); self.restartTask = nil; self.lock.unlock()
+                                                                    ^
+Foundation.NSLock.unlock:2:11: note: 'unlock()' declared here
+open func unlock()}
+          ^
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Subtraction.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Words\ and\ Bits.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/AppJvmText.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeProfile.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift:28:51: error: extra arguments at positions #2, #3 in call
+            configuration = NEHotspotConfiguration(ssid: ssid, passphrase: password!, encryption: .wpa2)
+                                                  ^
+/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk/System/Library/Frameworks/NetworkExtension.framework/Headers/NEHotspotConfigurationManager.h:291:1: note: 'init(ssid:)' declared here
+- (instancetype)initWithSSID:(NSString *)SSID API_AVAILABLE(ios(11.0), watchos(7.0)) API_UNAVAILABLE(macos, tvos);
+^
+/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift:28:100: error: cannot infer contextual base in reference to member 'wpa2'
+            configuration = NEHotspotConfiguration(ssid: ssid, passphrase: password!, encryption: .wpa2)
+                                                                                                  ~^~~~
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeProfileSelection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeQR.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/BikeQRParser.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Bike/DashMemory.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/ControlChannelHandler.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/DashProbeClient.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/EasyConnLink.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/GhostTouchFilter.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/InterfaceAddresses.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkOptions.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkSession.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkSessionContext.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkStatsTracker.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/LinkTypes.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/MediaChannelHandler.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/POSIXTransport.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+Failed frontend command:
+/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -filelist /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/sources-1 -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift -supplementary-output-file-map /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/supplementaryOutputs-2 -target arm64-apple-ios16.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -I /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -F /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -no-color-diagnostics -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -O -serialize-debugging-options -const-gather-protocols-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR -resource-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -file-compilation-dir /Users/runner/work/CarWithin-450SR/CarWithin-450SR -Xcc -ivfsstatcache -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-generated-files.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-own-target-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-project-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources -import-objc-header /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TDSCarKit-Bridging-Header.h -pch-output-dir /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/PrecompiledHeaders -pch-disable-validation -module-name TDSCarKit -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.5 -target-sdk-name iphoneos18.5 -external-plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CarScreenStore.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoEasyConnOutput.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoOutput.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/FragmentedMP4.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/H264Surface.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/HTTPSConfiguration.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/HotspotAutoJoin.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/LocalTLSIdentity.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/MediaSockets.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NativeReceiver.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotH264Encoder.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotKCPVideo.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotOutput.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotProtocol.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotUDPSocket.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/PxcConnection.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverConfiguration.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverViewController.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SameDeviceProbe.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SettingsUI.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupportViews.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupporterDirectory.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TailingConnection.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CarScreenStore.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoEasyConnOutput.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoOutput.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/FragmentedMP4.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/H264Surface.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/HTTPSConfiguration.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/HotspotAutoJoin.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/LocalTLSIdentity.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/MediaSockets.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NativeReceiver.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotH264Encoder.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotKCPVideo.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotOutput.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotProtocol.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotUDPSocket.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/PxcConnection.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverConfiguration.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverViewController.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SameDeviceProbe.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SettingsUI.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupportViews.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupporterDirectory.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TailingConnection.o
+SwiftCompile normal arm64 Compiling\ ANTBMSClient.swift,\ ANTBMSController.swift,\ AccessoryIdentityStore.swift,\ AirPlayCredentials.swift,\ AppDelegate.swift,\ AppReleaseService.swift,\ AppReleaseViews.swift,\ AutoStart.swift,\ BLEBootstrap.swift,\ BMSCardOrderViewController.swift,\ BMSCardPreviewView.swift,\ BMSLiveSummaryView.swift,\ BMSOverlay.swift,\ BMSVoltageTrendView.swift,\ BackgroundKeepAlive.swift,\ BrowserReceiverPage.swift,\ CarLifeOutput.swift,\ CarLinkRelay.swift,\ CarPlayAudio.swift,\ CarPlayControlBrowser.swift,\ CarPlayControls.swift,\ CarPlayInfo.swift,\ CarPlayMediaSession.swift,\ CarPlayPictureInPicture.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSClient.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AccessoryIdentityStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AirPlayCredentials.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppDelegate.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseService.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseViews.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AutoStart.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BLEBootstrap.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardOrderViewController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardPreviewView.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSLiveSummaryView.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSOverlay.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSVoltageTrendView.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BackgroundKeepAlive.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BrowserReceiverPage.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLifeOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLinkRelay.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayAudio.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControlBrowser.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControls.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayInfo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayMediaSession.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayPictureInPicture.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSClient.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSController.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AccessoryIdentityStore.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AirPlayCredentials.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppDelegate.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseService.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseViews.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AutoStart.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BLEBootstrap.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardOrderViewController.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardPreviewView.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSLiveSummaryView.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSOverlay.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSVoltageTrendView.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BackgroundKeepAlive.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BrowserReceiverPage.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLifeOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLinkRelay.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayAudio.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControlBrowser.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControls.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayInfo.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayMediaSession.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayPictureInPicture.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for TDSCarKit (in target 'TDSCarKit' from project 'TDSCarKit')
+
+SwiftDriver\ Compilation\ Requirements TDSCarKit normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TDSCarKit -O -enforce-exclusivity\=checked @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -target arm64-apple-ios16.0 -g -module-cache-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -F /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -output-file-map /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-generated-files.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-own-target-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-project-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit-Swift.h -import-objc-header /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TDSCarKit-Bridging-Header.h -pch-output-dir /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/PrecompiledHeaders -working-directory /Users/runner/work/CarWithin-450SR/CarWithin-450SR -experimental-emit-module-separately -disable-cmo
+
+LinkAssetCatalog /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Assets.xcassets (in target 'TDSCarKit' from project 'TDSCarKit')
+    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
+    builtin-linkAssetCatalog --thinned /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app --plist-output /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist
+note: Emplaced /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/Assets.car (in target 'TDSCarKit' from project 'TDSCarKit')
+note: Emplaced /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/AppIcon60x60@2x.png (in target 'TDSCarKit' from project 'TDSCarKit')
+note: Emplaced /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/AppIcon76x76@2x~ipad.png (in target 'TDSCarKit' from project 'TDSCarKit')
+
+SwiftCompile normal arm64 Compiling\ PureSwiftHuidSigner.swift,\ RSABigUInt.swift,\ RSAKeyMaterial.swift,\ Transport.swift,\ ClientInfo.swift,\ ConfigCapture.swift,\ HuTimeSync.swift,\ MediaMessage.swift,\ PxcCmd.swift,\ PxcFrame.swift,\ PxcOrgJSON.swift,\ PxcProbe.swift,\ PxcTouchFrame.swift,\ ScreenMargins.swift,\ KeyValueStore.swift,\ Async.swift,\ ByteIO.swift,\ Log.swift,\ LogRedactor.swift,\ OrderedJSON.swift,\ VideoTypes.swift,\ VideoCodec.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/PureSwiftHuidSigner.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/RSABigUInt.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/RSAKeyMaterial.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/Transport.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/ClientInfo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/ConfigCapture.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/HuTimeSync.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/MediaMessage.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcCmd.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcFrame.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcOrgJSON.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcProbe.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcTouchFrame.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Settings/ScreenMargins.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Storage/KeyValueStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/Async.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/ByteIO.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/Log.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/LogRedactor.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/OrderedJSON.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Video/VideoTypes.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/VideoCodec.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'TDSCarKit' from project 'TDSCarKit')
 SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/PureSwiftHuidSigner.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
-
-SwiftCompile normal arm64 Compiling\ RSABigUInt.swift,\ RSAKeyMaterial.swift,\ Transport.swift,\ ClientInfo.swift,\ ConfigCapture.swift,\ HuTimeSync.swift,\ MediaMessage.swift,\ PxcCmd.swift,\ PxcFrame.swift,\ PxcOrgJSON.swift,\ PxcProbe.swift,\ PxcTouchFrame.swift,\ ScreenMargins.swift,\ KeyValueStore.swift,\ Async.swift,\ ByteIO.swift,\ Log.swift,\ LogRedactor.swift,\ OrderedJSON.swift,\ VideoTypes.swift,\ VideoCodec.swift,\ GeneratedAssetSymbols.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/RSABigUInt.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/RSAKeyMaterial.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/Transport.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/ClientInfo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/ConfigCapture.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/HuTimeSync.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/MediaMessage.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcCmd.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcFrame.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcOrgJSON.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcProbe.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Protocol/PxcTouchFrame.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Settings/ScreenMargins.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Storage/KeyValueStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/Async.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/ByteIO.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/Log.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/LogRedactor.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Util/OrderedJSON.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Video/VideoTypes.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/VideoCodec.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'TDSCarKit' from project 'TDSCarKit')
 
 SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/OpenCfMoto/Link/RSABigUInt.swift (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
@@ -411,883 +559,16 @@ SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/bui
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     
 
-SwiftDriverJobDiscovery normal arm64 Emitting module for TDSCarKit (in target 'TDSCarKit' from project 'TDSCarKit')
-
-SwiftDriver\ Compilation\ Requirements TDSCarKit normal arm64 com.apple.xcode.tools.swift.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name TDSCarKit -O -enforce-exclusivity\=checked @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -target arm64-apple-ios16.0 -g -module-cache-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -F /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -output-file-map /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-generated-files.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-own-target-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-project-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit-Swift.h -import-objc-header /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TDSCarKit-Bridging-Header.h -pch-output-dir /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/PrecompiledHeaders -working-directory /Users/runner/work/CarWithin-450SR/CarWithin-450SR -experimental-emit-module-separately -disable-cmo
-
-SwiftCompile normal arm64 Compiling\ TailingDisplayProfile.swift,\ TailingH264Decoder.swift,\ TailingIdentity.swift,\ TailingOutput.swift,\ TailingProtocol.swift,\ TailingSocket.swift,\ VideoOutputServer.swift,\ WiFiPresetStore.swift,\ Zeeho62Legacy.swift,\ ZeehoOutput.swift,\ ANTBMSCardConfiguration.swift,\ ANTBMSProtocol.swift,\ ANTBMSRideRecords.swift,\ ANTBMSSessionStatistics.swift,\ AccessoryIdentity.swift,\ AccessoryMessages.swift,\ AnnexB.swift,\ AudioStream.swift,\ BLEFrame.swift,\ Binary.swift,\ IAP2.swift,\ Localization.swift,\ MFiSAP.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingDisplayProfile.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingH264Decoder.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingIdentity.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingProtocol.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingSocket.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/VideoOutputServer.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/WiFiPresetStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Zeeho62Legacy.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ZeehoOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSCardConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSProtocol.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSRideRecords.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSSessionStatistics.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AccessoryIdentity.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AccessoryMessages.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AnnexB.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AudioStream.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/BLEFrame.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Binary.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/IAP2.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Localization.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/MFiSAP.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingDisplayProfile.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingH264Decoder.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingIdentity.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingOutput.swift:244:53: warning: capture of 'buffer' with non-sendable type 'CVPixelBuffer' (aka 'CVBuffer') in an isolated closure; this is an error in the Swift 6 language mode
-                let source = CIImage(cvPixelBuffer: buffer)
-                                                    ^
-CoreVideo.CVBuffer:1:14: note: class 'CVBuffer' does not conform to the 'Sendable' protocol
-public class CVBuffer : _CFObject {
-             ^
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingProtocol.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingSocket.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/VideoOutputServer.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/WiFiPresetStore.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Zeeho62Legacy.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ZeehoOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSCardConfiguration.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSProtocol.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSRideRecords.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ANTBMSSessionStatistics.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AccessoryIdentity.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AccessoryMessages.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AnnexB.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/AudioStream.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/BLEFrame.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Binary.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/IAP2.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Localization.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/MFiSAP.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
 SwiftMergeGeneratedHeaders /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/TDSCarKit-Swift.h /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit-Swift.h (in target 'TDSCarKit' from project 'TDSCarKit')
     cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
     builtin-swiftHeaderTool -arch arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit-Swift.h -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/TDSCarKit-Swift.h
-
-SwiftDriverJobDiscovery normal arm64 Compiling RSABigUInt.swift, RSAKeyMaterial.swift, Transport.swift, ClientInfo.swift, ConfigCapture.swift, HuTimeSync.swift, MediaMessage.swift, PxcCmd.swift, PxcFrame.swift, PxcOrgJSON.swift, PxcProbe.swift, PxcTouchFrame.swift, ScreenMargins.swift, KeyValueStore.swift, Async.swift, ByteIO.swift, Log.swift, LogRedactor.swift, OrderedJSON.swift, VideoTypes.swift, VideoCodec.swift, GeneratedAssetSymbols.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-
-Copy /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftmodule (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftmodule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/arm64-apple-ios.swiftmodule
-
-Copy /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/arm64-apple-ios.swiftdoc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftdoc (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftdoc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/arm64-apple-ios.swiftdoc
-
-Copy /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/arm64-apple-ios.abi.json /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.abi.json (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.abi.json /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/arm64-apple-ios.abi.json
-
-Copy /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftsourceinfo (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -strip-unsigned-binaries -strip-deterministic -strip-tool /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip -resolve-src-symlinks -rename /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit.swiftsourceinfo /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
-
-SwiftCompile normal arm64 Compiling\ OPACK.swift,\ PairSetup.swift,\ Pairing.swift,\ RTSP.swift,\ ScreenStream.swift,\ Addition.swift,\ BigInt.swift,\ BigUInt.swift,\ Bitwise\ Ops.swift,\ Codable.swift,\ Comparable.swift,\ Data\ Conversion.swift,\ Division.swift,\ Exponentiation.swift,\ Floating\ Point\ Conversion.swift,\ GCD.swift,\ Hashable.swift,\ Integer\ Conversion.swift,\ Multiplication.swift,\ Prime\ Test.swift,\ Random.swift,\ Shifts.swift,\ Square\ Root.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/OPACK.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/PairSetup.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Pairing.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/RTSP.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ScreenStream.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Addition.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/BigInt.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/BigUInt.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Bitwise\ Ops.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Codable.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Comparable.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Data\ Conversion.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Division.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Exponentiation.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Floating\ Point\ Conversion.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/GCD.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Hashable.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Integer\ Conversion.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Multiplication.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Prime\ Test.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Random.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Shifts.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Square\ Root.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/OPACK.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/PairSetup.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Pairing.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/RTSP.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/ScreenStream.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Addition.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/BigInt.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/BigUInt.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Bitwise\ Ops.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Codable.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Comparable.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Data\ Conversion.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Division.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Exponentiation.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Floating\ Point\ Conversion.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/GCD.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Hashable.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Integer\ Conversion.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Multiplication.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Prime\ Test.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Random.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Shifts.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/TDSCarKitCore/Vendor/BigInt/Square\ Root.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-LinkAssetCatalog /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Assets.xcassets (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-linkAssetCatalog --thinned /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_output/thinned --thinned-dependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_dependencies_thinned --thinned-info-plist-content /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist_thinned --unthinned /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_output/unthinned --unthinned-dependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_dependencies_unthinned --unthinned-info-plist-content /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist_unthinned --output /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app --plist-output /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist
-note: Emplaced /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/AppIcon76x76@2x~ipad.png (in target 'TDSCarKit' from project 'TDSCarKit')
-note: Emplaced /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/AppIcon60x60@2x.png (in target 'TDSCarKit' from project 'TDSCarKit')
-note: Emplaced /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/Assets.car (in target 'TDSCarKit' from project 'TDSCarKit')
-
-SwiftDriverJobDiscovery normal arm64 Compiling Strideable.swift, String Conversion.swift, Subtraction.swift, Words and Bits.swift, AppJvmText.swift, BikeProfile.swift, BikeProfileSelection.swift, BikeQR.swift, BikeQRParser.swift, DashMemory.swift, ControlChannelHandler.swift, DashProbeClient.swift, EasyConnLink.swift, GhostTouchFilter.swift, InterfaceAddresses.swift, LinkOptions.swift, LinkSession.swift, LinkSessionContext.swift, LinkStatsTracker.swift, LinkTypes.swift, MediaChannelHandler.swift, POSIXTransport.swift, PureSwiftHuidSigner.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-
-SwiftCompile normal arm64 Compiling\ CarScreenStore.swift,\ CfmotoEasyConnOutput.swift,\ CfmotoOutput.swift,\ FragmentedMP4.swift,\ H264Surface.swift,\ HTTPSConfiguration.swift,\ LocalTLSIdentity.swift,\ MediaSockets.swift,\ NativeReceiver.swift,\ NinebotH264Encoder.swift,\ NinebotKCPVideo.swift,\ NinebotOutput.swift,\ NinebotProtocol.swift,\ NinebotUDPSocket.swift,\ PxcConnection.swift,\ ReceiverConfiguration.swift,\ ReceiverViewController.swift,\ SameDeviceProbe.swift,\ SettingsUI.swift,\ SupportViews.swift,\ SupporterDirectory.swift,\ TailingConnection.swift,\ TailingDiscovery.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingDiscovery.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift:344:46: error: missing argument label 'execute:' in call
-                guard let frame = queue.sync({ () -> H264EncodedFrame? in
-                                             ^
-                                             execute: 
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingDiscovery.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-Failed frontend command:
-/Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-frontend -frontend -c -filelist /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/sources-1 -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift -primary-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingDiscovery.swift -supplementary-output-file-map /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/supplementaryOutputs-2 -target arm64-apple-ios16.0 -Xllvm -aarch64-use-tbi -enable-objc-interop -stack-check -sdk /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.5.sdk -I /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -F /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos -no-color-diagnostics -g -debug-info-format\=dwarf -dwarf-version\=4 -module-cache-path /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex -swift-version 5 -enforce-exclusivity\=checked -O -serialize-debugging-options -const-gather-protocols-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKit_const_extract_protocols.json -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -empty-abi-descriptor -validate-clang-modules-once -clang-build-session-file /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -Xcc -working-directory -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR -resource-dir /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift -file-compilation-dir /Users/runner/work/CarWithin-450SR/CarWithin-450SR -Xcc -ivfsstatcache -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/swift-overrides.hmap -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-generated-files.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-own-target-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/TDSCarKit-project-headers.hmap -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/include -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/DerivedSources -import-objc-header /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TDSCarKit-Bridging-Header.h -pch-output-dir /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/PrecompiledHeaders -pch-disable-validation -module-name TDSCarKit -frontend-parseable-output -disable-clang-spi -target-sdk-version 18.5 -target-sdk-name iphoneos18.5 -external-plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/swift/host/plugins\#/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -external-plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/local/lib/swift/host/plugins\#/Applications/Xcode_16.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/swift-plugin-server -in-process-plugin-server-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/libSwiftInProcPluginServer.dylib -plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins -plugin-path /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/lib/swift/host/plugins -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CarScreenStore.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoEasyConnOutput.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoOutput.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/FragmentedMP4.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/H264Surface.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/HTTPSConfiguration.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/LocalTLSIdentity.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/MediaSockets.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NativeReceiver.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotH264Encoder.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotKCPVideo.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotOutput.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotProtocol.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotUDPSocket.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/PxcConnection.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverConfiguration.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverViewController.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SameDeviceProbe.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SettingsUI.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupportViews.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupporterDirectory.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TailingConnection.o -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TailingDiscovery.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CarScreenStore.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoEasyConnOutput.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/CfmotoOutput.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/FragmentedMP4.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/H264Surface.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/HTTPSConfiguration.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/LocalTLSIdentity.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/MediaSockets.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NativeReceiver.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotH264Encoder.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotKCPVideo.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotOutput.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotProtocol.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/NinebotUDPSocket.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/PxcConnection.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverConfiguration.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ReceiverViewController.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SameDeviceProbe.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SettingsUI.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupportViews.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/SupporterDirectory.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TailingConnection.o -index-unit-output-path /TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TailingDiscovery.o
-ProcessInfoPlistFile /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/Info.plist /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Info.plist (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-infoPlistUtility /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -additionalcontentfile /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/assetcatalog_generated_info.plist -requiredArchitecture arm64 -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Products/Release-iphoneos/TDSCarKit.app/Info.plist
-
-SwiftDriverJobDiscovery normal arm64 Compiling OPACK.swift, PairSetup.swift, Pairing.swift, RTSP.swift, ScreenStream.swift, Addition.swift, BigInt.swift, BigUInt.swift, Bitwise Ops.swift, Codable.swift, Comparable.swift, Data Conversion.swift, Division.swift, Exponentiation.swift, Floating Point Conversion.swift, GCD.swift, Hashable.swift, Integer Conversion.swift, Multiplication.swift, Prime Test.swift, Random.swift, Shifts.swift, Square Root.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-
-SwiftCompile normal arm64 Compiling\ ANTBMSClient.swift,\ ANTBMSController.swift,\ AccessoryIdentityStore.swift,\ AirPlayCredentials.swift,\ AppDelegate.swift,\ AppReleaseService.swift,\ AppReleaseViews.swift,\ BLEBootstrap.swift,\ BMSCardOrderViewController.swift,\ BMSCardPreviewView.swift,\ BMSLiveSummaryView.swift,\ BMSOverlay.swift,\ BMSVoltageTrendView.swift,\ BackgroundKeepAlive.swift,\ BrowserReceiverPage.swift,\ CarLifeOutput.swift,\ CarLinkRelay.swift,\ CarPlayAudio.swift,\ CarPlayControlBrowser.swift,\ CarPlayControls.swift,\ CarPlayInfo.swift,\ CarPlayMediaSession.swift,\ CarPlayPictureInPicture.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSClient.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AccessoryIdentityStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AirPlayCredentials.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppDelegate.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseService.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseViews.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BLEBootstrap.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardOrderViewController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardPreviewView.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSLiveSummaryView.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSOverlay.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSVoltageTrendView.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BackgroundKeepAlive.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BrowserReceiverPage.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLifeOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLinkRelay.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayAudio.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControlBrowser.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControls.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayInfo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayMediaSession.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayPictureInPicture.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSClient.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ANTBMSController.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AccessoryIdentityStore.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AirPlayCredentials.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppDelegate.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseService.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/AppReleaseViews.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BLEBootstrap.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardOrderViewController.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSCardPreviewView.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSLiveSummaryView.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSOverlay.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BMSVoltageTrendView.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BackgroundKeepAlive.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/BrowserReceiverPage.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLifeOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarLinkRelay.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayAudio.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControlBrowser.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayControls.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayInfo.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayMediaSession.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarPlayPictureInPicture.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-
-SwiftDriverJobDiscovery normal arm64 Compiling TailingDisplayProfile.swift, TailingH264Decoder.swift, TailingIdentity.swift, TailingOutput.swift, TailingProtocol.swift, TailingSocket.swift, VideoOutputServer.swift, WiFiPresetStore.swift, Zeeho62Legacy.swift, ZeehoOutput.swift, ANTBMSCardConfiguration.swift, ANTBMSProtocol.swift, ANTBMSRideRecords.swift, ANTBMSSessionStatistics.swift, AccessoryIdentity.swift, AccessoryMessages.swift, AnnexB.swift, AudioStream.swift, BLEFrame.swift, Binary.swift, IAP2.swift, Localization.swift, MFiSAP.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-
-ScanDependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-    Using response file: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    builtin-ScanDependencies -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.o.scan -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.d --serialize-diagnostics /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.dia -c /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.o
-
-ScanDependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/TDSCarKitCrypto.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-    Using response file: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    builtin-ScanDependencies -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.o.scan -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.d --serialize-diagnostics /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.dia -c /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/TDSCarKitCrypto.c -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.o
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdarg-6FKPTWMI7VRJQSBDO335FQ3XS.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdarg-6FKPTWMI7VRJQSBDO335FQ3XS.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-DZBNEQUIRNZDAKI829PPSA2Y5.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-DZBNEQUIRNZDAKI829PPSA2Y5.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stddef-CMO21TBCOG8UG9PUVO746N3WQ.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stddef-CMO21TBCOG8UG9PUVO746N3WQ.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdbool-AWT9PK1T3XT2NQGUHK3DP32BH.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdbool-AWT9PK1T3XT2NQGUHK3DP32BH.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-DWDQ43O510WC912E2QH0UJ0CY.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-DWDQ43O510WC912E2QH0UJ0CY.scan
-
-ScanDependencies /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/DirectAccessoryTransport.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-    Using response file: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
-    
-    builtin-ScanDependencies -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.o.scan -- /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.d --serialize-diagnostics /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.dia -c /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/DirectAccessoryTransport.m -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.o
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-9WZMQUSVC40SUN2TA7WUTAKRE.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-9WZMQUSVC40SUN2TA7WUTAKRE.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stddef-6DXD411CVXL4D2LLJZR9O2O0M.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stddef-6DXD411CVXL4D2LLJZR9O2O0M.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-8JHUW3GAU2GQ3V5M6Q2Q5WWEY.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrcheck-8JHUW3GAU2GQ3V5M6Q2Q5WWEY.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdbool-4QB5HAXB11MH3NWAL0IQOTJK2.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdbool-4QB5HAXB11MH3NWAL0IQOTJK2.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_fenv-8TET93YB9ALFEHSWVSA1UFALB.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_fenv-8TET93YB9ALFEHSWVSA1UFALB.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdarg-14DPUUYDBTS7SMLSRZRIPF1ES.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdarg-14DPUUYDBTS7SMLSRZRIPF1ES.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrauth-8NF7XUI7IXH3GRI497OYUYUK9.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ptrauth-8NF7XUI7IXH3GRI497OYUYUK9.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-1AH1S0EV6RX54B0RFGP35TEOC.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-1AH1S0EV6RX54B0RFGP35TEOC.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/TargetConditionals-C89LB8L8TBFQ96SL82LNBEH0N.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/TargetConditionals-C89LB8L8TBFQ96SL82LNBEH0N.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-D3OOHFUGD8J3MCNMV7W0VH34I.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-D3OOHFUGD8J3MCNMV7W0VH34I.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_strings-BOAKD07AJHAW14Z47NKTWKRHF.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_strings-BOAKD07AJHAW14Z47NKTWKRHF.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_limits-7WQ1M5F51SE51DH0PPPTQQD71.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_limits-7WQ1M5F51SE51DH0PPPTQQD71.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/mach-49RA4BPSEHMZI0JVN1BE0NKU0.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/mach-49RA4BPSEHMZI0JVN1BE0NKU0.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_errno-2E2IN76RPZHMWZG58GCLOJXTX.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_errno-2E2IN76RPZHMWZG58GCLOJXTX.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdint-F3VAMRFYPB19CVHWC8TXT31U2.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdint-F3VAMRFYPB19CVHWC8TXT31U2.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_sys_select-E8T38QI2RNOICEZ65BQ26AREU.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_sys_select-E8T38QI2RNOICEZ65BQ26AREU.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdint-E5Y9A6D1UM5XC17XZYG15IYWE.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdint-E5Y9A6D1UM5XC17XZYG15IYWE.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/alloca-E6H2UNEII3YZ9KEUW7HFQLA7T.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/alloca-E6H2UNEII3YZ9KEUW7HFQLA7T.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_time-6ZZ9PBBHR3PGJTT33NKL8NK2S.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_time-6ZZ9PBBHR3PGJTT33NKL8NK2S.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_assert-1USN8R17653BRPUBMLPG2H7SS.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_assert-1USN8R17653BRPUBMLPG2H7SS.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_limits-BKEY7H5WZVQTOBX0IM2QIY9SE.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_limits-BKEY7H5WZVQTOBX0IM2QIY9SE.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/netinet_in-1KCWORGNYH3RFVV3GRZF6LL6X.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/netinet_in-1KCWORGNYH3RFVV3GRZF6LL6X.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_float-8AJQGCF6LAH22IZQXT24SK394.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_float-8AJQGCF6LAH22IZQXT24SK394.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_types-230AUFSGN3TBY8DT67YK9BLTL.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_types-230AUFSGN3TBY8DT67YK9BLTL.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_float-M4RS71N4NXD4MS2MASNR0JFH.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_float-M4RS71N4NXD4MS2MASNR0JFH.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_resource-55NKCCM5PIA98GKVKX4Q8212H.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_resource-55NKCCM5PIA98GKVKX4Q8212H.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_signal-DD9Q61ZTEMC85ECIEY4KH5VZ0.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_signal-DD9Q61ZTEMC85ECIEY4KH5VZ0.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-97JN8S2MJXUWABZCDR1PW2G1N.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-97JN8S2MJXUWABZCDR1PW2G1N.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_string-9P0IF08ZDYNPRTPWEU8W08LJI.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_string-9P0IF08ZDYNPRTPWEU8W08LJI.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/runetype-3K7PESUEHPHGTV9NIO8J816XC.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/runetype-3K7PESUEHPHGTV9NIO8J816XC.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_iso646-6RD7Z0QWSW74HZLYINRM7IK8W.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_iso646-6RD7Z0QWSW74HZLYINRM7IK8W.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-13VK50ZU8X8RSJDJGNZY53BNP.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-13VK50ZU8X8RSJDJGNZY53BNP.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-923V0ULOZNC2GH5L2K9NQT1YA.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability_internal-923V0ULOZNC2GH5L2K9NQT1YA.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-72A4B7OTQJWNNOKI8TVQN8TCY.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-72A4B7OTQJWNNOKI8TVQN8TCY.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-70DBVAW095O68XISP0KFTNQ32.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_availability-70DBVAW095O68XISP0KFTNQ32.scan
-
-CompileC /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-    Using response file: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.d --serialize-diagnostics /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.dia -c /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/ikcp.o
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c:565:49: warning: implicit conversion loses integer precision: 'long' to 'IINT32' (aka 'int') [-Wshorten-64-to-32]
-  565 |                 kcp->rx_rttval = (3 * kcp->rx_rttval + delta) / 4;
-      |                                ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c:603:16: warning: implicit conversion loses integer precision: 'long' to 'IINT32' (aka 'int') [-Wshorten-64-to-32]
-  603 |                                         pkt_rtt = _itimediff(kcp->current, seg->ts);
-      |                                                 ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c:829:26: warning: implicit conversion loses integer precision: 'long' to 'IINT32' (aka 'int') [-Wshorten-64-to-32]
-  829 |                                 ikcp_update_ack(kcp, _itimediff(kcp->current, ts));
-      |                                 ~~~~~~~~~~~~~~~      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c:1249:9: warning: implicit conversion loses integer precision: 'long' to 'IINT32' (aka 'int') [-Wshorten-64-to-32]
- 1249 |         slap = _itimediff(kcp->current, kcp->ts_flush);
-      |              ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c:1296:13: warning: implicit conversion loses integer precision: 'long' to 'IINT32' (aka 'int') [-Wshorten-64-to-32]
- 1296 |         tm_flush = _itimediff(ts_flush, current);
-      |                  ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ikcp.c:1300:17: warning: implicit conversion loses integer precision: 'long' to 'IINT32' (aka 'int') [-Wshorten-64-to-32]
- 1300 |                 IINT32 diff = _itimediff(seg->resendts, current);
-      |                        ~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-6 warnings generated.
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AvailabilityMacros-2VDX5259455MPZ3PZBB351UGA.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/AvailabilityMacros-2VDX5259455MPZ3PZBB351UGA.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-A0GF0X0YECAM7XIJWC9XGOFG.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/DarwinFoundation-A0GF0X0YECAM7XIJWC9XGOFG.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CommonCrypto-4WMKPOXRIIRBMOUTMLJ9X8VK6.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CommonCrypto-4WMKPOXRIIRBMOUTMLJ9X8VK6.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_math-CB9QTDJOXMF04W7UIKC4EXSWO.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_math-CB9QTDJOXMF04W7UIKC4EXSWO.scan
-
-CompileC /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/TDSCarKitCrypto.c normal arm64 c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-    Using response file: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp
-    
-    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c -ivfsstatcache /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-implicit-fallthrough -fstrict-aliasing -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/7187679823f38a2a940e0043cdf9d637-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.d --serialize-diagnostics /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.dia -c /Users/runner/work/CarWithin-450SR/CarWithin-450SR/Sources/CTDSCarKitCrypto/TDSCarKitCrypto.c -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/TDSCarKitCrypto.o
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_strings-3KFDCCE1I6NWM87OL2D3MKOTJ.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_strings-3KFDCCE1I6NWM87OL2D3MKOTJ.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_complex-8J61PNWFIY1GIKUFVLYOCMFBX.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_complex-8J61PNWFIY1GIKUFVLYOCMFBX.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_time-AGT17IXQBQY2VXUCMBZPEJOXL.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_time-AGT17IXQBQY2VXUCMBZPEJOXL.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_locale-EB9EHWIKK33SQ0D8JFMKDA56B.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_locale-EB9EHWIKK33SQ0D8JFMKDA56B.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/mach-CJ4I07WUZNYXV387PN08KAZXU.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/mach-CJ4I07WUZNYXV387PN08KAZXU.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/runetype-44QT1B2BMCJ110N97X7QW6HIL.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/runetype-44QT1B2BMCJ110N97X7QW6HIL.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_errno-9ZNA7LQ83HY0SZRS4YNNR0VCF.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_errno-9ZNA7LQ83HY0SZRS4YNNR0VCF.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_limits-9177H4YMQ67KT1P408HKTKXC9.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_limits-9177H4YMQ67KT1P408HKTKXC9.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_setjmp-E5S1WZIDYBYRDJ5V2N9UNTG0G.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_setjmp-E5S1WZIDYBYRDJ5V2N9UNTG0G.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_assert-UQD9WMMLFS3E6K6H8YO7G1N.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_assert-UQD9WMMLFS3E6K6H8YO7G1N.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/netinet_in-ZNJLSNSG1XHU52WZULWTN3VW.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/netinet_in-ZNJLSNSG1XHU52WZULWTN3VW.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_sys_select-CA7JI0FPDRSSV0HJNFLG128EF.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_sys_select-CA7JI0FPDRSSV0HJNFLG128EF.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-SQULCWMIF4P46JDE1HLCWQEC.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_useconds_t-SQULCWMIF4P46JDE1HLCWQEC.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/alloca-3DVVEZ6A68YUJ8FIXG3U4X2J1.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/alloca-3DVVEZ6A68YUJ8FIXG3U4X2J1.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_types-1JPCAY9TCCXV5EAYSHYLFOGL8.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_types-1JPCAY9TCCXV5EAYSHYLFOGL8.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_tgmath-87I8EBZRGE12L04JCAL3XFZLY.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_tgmath-87I8EBZRGE12L04JCAL3XFZLY.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_time-9JZI87S3U9SOTMMR21JJGU53J.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_time-9JZI87S3U9SOTMMR21JJGU53J.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-77NGIASSH52I1882GHJMJE9N1.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdio-77NGIASSH52I1882GHJMJE9N1.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_string-7W2NEN7F1AWOBUS0Y5H6KN5PG.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_string-7W2NEN7F1AWOBUS0Y5H6KN5PG.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/nl_types-1Y0D6YK66VJYRJFO6ZPAEM90O.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/nl_types-1Y0D6YK66VJYRJFO6ZPAEM90O.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_signal-67VKOIW6TH3L29UPIAJ18D5UM.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_signal-67VKOIW6TH3L29UPIAJ18D5UM.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_tgmath-AIXYWH5X32HM4FCSNLQRGLXRV.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_tgmath-AIXYWH5X32HM4FCSNLQRGLXRV.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/pthread-2N8WR4UBJC06S6M8ANHZYBPU6.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/pthread-2N8WR4UBJC06S6M8ANHZYBPU6.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-6UEINTYEYLWLIXRX93OQTWT66.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_select-6UEINTYEYLWLIXRX93OQTWT66.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/uuid-1NU993L45Z37A7U5PZP9HYXPL.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/uuid-1NU993L45Z37A7U5PZP9HYXPL.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/xlocale-22L6CARVLUWRVLPON6T9OG62X.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/xlocale-22L6CARVLUWRVLPON6T9OG62X.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-68JQD1JO36QT9HRJB024VVBLJ.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/gethostuuid-68JQD1JO36QT9HRJB024VVBLJ.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_limits-9KVEL7QZRCX139EO0ZSJ2GFN0.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_limits-9KVEL7QZRCX139EO0ZSJ2GFN0.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/unistd-7NKGEI2OKO19ZGB1B76MA590C.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/unistd-7NKGEI2OKO19ZGB1B76MA590C.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdint-2D35H8F2ME1YDTRHJE62QM0JC.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdint-2D35H8F2ME1YDTRHJE62QM0JC.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_ctype-AGRTPES772CMT830CXD0Z1CBV.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_ctype-AGRTPES772CMT830CXD0Z1CBV.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdint-44XXTHTJXOM0DRK0CRFBN1TAQ.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdint-44XXTHTJXOM0DRK0CRFBN1TAQ.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/__wctype-6ND20GCHP31KTXJZEEEVXU890.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/__wctype-6ND20GCHP31KTXJZEEEVXU890.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_resource-4E0MWP7IW4B77J0KKNXTRFY2U.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_resource-4E0MWP7IW4B77J0KKNXTRFY2U.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_inttypes-61O714UTM1KX64Q2GFTAD7133.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_inttypes-61O714UTM1KX64Q2GFTAD7133.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-9O5H0WNELAZEVTLAJHUN5YMNU.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/sys_wait-9O5H0WNELAZEVTLAJHUN5YMNU.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_inttypes-F2H0JVGQ6DWQ6XCWRQDFGQ3YY.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_inttypes-F2H0JVGQ6DWQ6XCWRQDFGQ3YY.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wctype-1R3LWKIORBPVOYVFIEEBNG4NK.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wctype-1R3LWKIORBPVOYVFIEEBNG4NK.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdatomic-CEOS1D2L130MYO1I0CSUUC2RC.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdatomic-CEOS1D2L130MYO1I0CSUUC2RC.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wchar-2JNF3GU85GARAH2C6KHWWVFR9.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_wchar-2JNF3GU85GARAH2C6KHWWVFR9.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-2FC6P4DD99LJL62CUVAQM1VO5.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/_stdlib-2FC6P4DD99LJL62CUVAQM1VO5.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Darwin-ANMS7H6N29DSB67EYKMV8C5UY.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Darwin-ANMS7H6N29DSB67EYKMV8C5UY.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ObjectiveC-5A9Z6OZPYN4C61DTP7DGXYC21.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/ObjectiveC-5A9Z6OZPYN4C61DTP7DGXYC21.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_object-EYB5HT9QMVQXIEELB90KOMZ52.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_object-EYB5HT9QMVQXIEELB90KOMZ52.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_workgroup-3A5TTCM6CGP0BTVOZYBX2CKZZ.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/os_workgroup-3A5TTCM6CGP0BTVOZYBX2CKZZ.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Dispatch-3R3HJZU16INOW9E8EG7BVH45J.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Dispatch-3R3HJZU16INOW9E8EG7BVH45J.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/XPC-AYU0KYMDZP03TVRN12J8P04Q8.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/XPC-AYU0KYMDZP03TVRN12J8P04Q8.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreFoundation-1P95O3LMVZR47S4H1B9GZ4NPG.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CoreFoundation-1P95O3LMVZR47S4H1B9GZ4NPG.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Security-8NNTC6839QLQRHRAFQ1Y9JOXN.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Security-8NNTC6839QLQRHRAFQ1Y9JOXN.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CFNetwork-J7YCFULPRJU6PUB80ZBEVA3V.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/CFNetwork-J7YCFULPRJU6PUB80ZBEVA3V.scan
-
-PrecompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Foundation-7W0OQM2DL68DBMPHDQLLJ58FK.scan
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    builtin-precompileModule /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/ExplicitPrecompiledModules/Foundation-7W0OQM2DL68DBMPHDQLLJ58FK.scan
-
-CompileC /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/DirectAccessoryTransport.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'TDSCarKit' from project 'TDSCarKit')
-    cd /Users/runner/work/CarWithin-450SR/CarWithin-450SR
-    
-    Using response file: /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
-    
-    /Applications/Xcode_16.4.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -ivfsstatcache /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/SDKStatCaches.noindex/iphoneos18.5-22F76-a529daf784b3616c7c04a36aeb7f5c05.sdkstatcache -fmessage-length\=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit\=0 -fno-color-diagnostics -fmodules-prune-interval\=86400 -fmodules-prune-after\=345600 -fbuild-session-file\=/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/ModuleCache.noindex/Session.modulevalidation -fmodules-validate-once-per-build-session -Wnon-modular-include-in-framework-module -Werror\=non-modular-include-in-framework-module -Wno-trigraphs -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-implicit-atomic-properties -Wno-objc-interface-ivars -Wno-arc-repeated-use-of-weak -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-float-conversion -Wno-non-literal-null-conversion -Wno-objc-literal-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-implicit-fallthrough -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Wno-sign-conversion -Wno-infinite-recursion -Wno-comma -Wno-block-capture-autoreleasing -Wno-strict-prototypes -Wno-semicolon-before-method-body @/Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp -MMD -MT dependencies -MF /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.d --serialize-diagnostics /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.dia -c /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/DirectAccessoryTransport.m -o /Users/runner/work/CarWithin-450SR/CarWithin-450SR/build/Build/Intermediates.noindex/TDSCarKit.build/Release-iphoneos/TDSCarKit.build/Objects-normal/arm64/DirectAccessoryTransport.o
 
 note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'TDSCarKit' from project 'TDSCarKit')
 ** BUILD FAILED **
 
 
 The following build commands failed:
-	SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift (in target 'TDSCarKit' from project 'TDSCarKit')
-	SwiftCompile normal arm64 Compiling\ CarScreenStore.swift,\ CfmotoEasyConnOutput.swift,\ CfmotoOutput.swift,\ FragmentedMP4.swift,\ H264Surface.swift,\ HTTPSConfiguration.swift,\ LocalTLSIdentity.swift,\ MediaSockets.swift,\ NativeReceiver.swift,\ NinebotH264Encoder.swift,\ NinebotKCPVideo.swift,\ NinebotOutput.swift,\ NinebotProtocol.swift,\ NinebotUDPSocket.swift,\ PxcConnection.swift,\ ReceiverConfiguration.swift,\ ReceiverViewController.swift,\ SameDeviceProbe.swift,\ SettingsUI.swift,\ SupportViews.swift,\ SupporterDirectory.swift,\ TailingConnection.swift,\ TailingDiscovery.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingDiscovery.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+	SwiftCompile normal arm64 /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift (in target 'TDSCarKit' from project 'TDSCarKit')
+	SwiftCompile normal arm64 Compiling\ CarScreenStore.swift,\ CfmotoEasyConnOutput.swift,\ CfmotoOutput.swift,\ FragmentedMP4.swift,\ H264Surface.swift,\ HTTPSConfiguration.swift,\ HotspotAutoJoin.swift,\ LocalTLSIdentity.swift,\ MediaSockets.swift,\ NativeReceiver.swift,\ NinebotH264Encoder.swift,\ NinebotKCPVideo.swift,\ NinebotOutput.swift,\ NinebotProtocol.swift,\ NinebotUDPSocket.swift,\ PxcConnection.swift,\ ReceiverConfiguration.swift,\ ReceiverViewController.swift,\ SameDeviceProbe.swift,\ SettingsUI.swift,\ SupportViews.swift,\ SupporterDirectory.swift,\ TailingConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CarScreenStore.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoEasyConnOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/CfmotoOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/FragmentedMP4.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/H264Surface.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HTTPSConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/HotspotAutoJoin.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/LocalTLSIdentity.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/MediaSockets.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NativeReceiver.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotH264Encoder.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotKCPVideo.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotOutput.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotProtocol.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/NinebotUDPSocket.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/PxcConnection.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverConfiguration.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/ReceiverViewController.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SameDeviceProbe.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SettingsUI.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupportViews.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/SupporterDirectory.swift /Users/runner/work/CarWithin-450SR/CarWithin-450SR/App/TailingConnection.swift (in target 'TDSCarKit' from project 'TDSCarKit')
 	Building project TDSCarKit with scheme TDSCarKit and configuration Release
 (3 failures)
