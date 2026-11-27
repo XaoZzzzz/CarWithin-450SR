@@ -210,6 +210,17 @@
         }
       }
     },
+    "450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进：短按切歌（CarPlay 媒体键），长按 2 秒调整音量。短按确认约需 0.3 秒，切歌略有延迟属正常。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On the 450SR the handlebar up/down keys change the iPhone volume over the bike's Bluetooth while casting. This feature observes the volume steps: a short press skips tracks (CarPlay media key), holding for 2 seconds adjusts the volume. A short press needs ~0.3 s to confirm, so skipping has a slight delay."
+          }
+        }
+      }
+    },
     "480×272 · JPEG · 最高 10 FPS": {
       "extractionState": "manual",
       "localizations": {
@@ -1491,6 +1502,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "DuckDNS 拒绝更新，请检查域名和 Token。"
+          }
+        }
+      }
+    },
+    "ENT 键经车机蓝牙发送播放命令，iOS 会因此把声音路由切到车机蓝牙——屏蔽它可保持你的播放通道不变。副作用：蓝牙耳机的播放/暂停键也会被屏蔽，请改用 iPhone 控制中心控制播放。来电响铃或通话中按任意方向键 = 接听/挂断。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The ENT key sends a play command over the bike's Bluetooth, and iOS reroutes audio to the bike in response — blocking it keeps your playback route unchanged. Side effect: Bluetooth headset play/pause buttons are also blocked; use iPhone Control Center to control playback. While a call is ringing or ongoing, pressing either key answers/hangs up."
           }
         }
       }
@@ -8627,6 +8649,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "局域网浏览器访问"
+          }
+        }
+      }
+    },
+    "屏蔽车机 ENT 键": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Block bike ENT key"
           }
         }
       }
@@ -17498,6 +17531,17 @@
         }
       }
     },
+    "车把按键桥已启用（短按切歌 · 长按 2 秒调音量）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar bridge enabled (short press skips · hold 2 s for volume)"
+          }
+        }
+      }
+    },
     "车把按键桥已启用（音量摇杆 → 切歌）": {
       "extractionState": "manual",
       "localizations": {
@@ -17505,6 +17549,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Handlebar bridge enabled (volume rocker → track skip)"
+          }
+        }
+      }
+    },
+    "车把长按 → 音量调整模式（松手结束）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar hold → volume mode (release to finish)"
           }
         }
       }
@@ -18647,6 +18702,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Volume rocker to track skip"
+          }
+        }
+      }
+    },
+    "音量调整结束": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume adjustment finished"
           }
         }
       }

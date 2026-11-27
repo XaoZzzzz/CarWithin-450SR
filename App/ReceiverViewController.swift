@@ -360,6 +360,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private let handlebarSwitch = UISwitch()
     private let handlebarDirectionSwitch = UISwitch()
     private let handlebarRestoreSwitch = UISwitch()
+    private let handlebarEntSwitch = UISwitch()
     private var handlebarLastEvent = ""
     private var launchedTransportTest = false
 
@@ -1632,7 +1633,8 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         handlebarSwitch.isOn = HandlebarMediaBridge.shared.isEnabled
         handlebarDirectionSwitch.isOn = HandlebarMediaBridge.shared.swapsDirection
         handlebarRestoreSwitch.isOn = HandlebarMediaBridge.shared.restoresVolume
-        [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch].forEach {
+        handlebarEntSwitch.isOn = HandlebarMediaBridge.shared.blocksEntKey
+        [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch, handlebarEntSwitch].forEach {
             $0.addTarget(self, action: #selector(handlebarSettingsChanged), for: .valueChanged)
         }
         HandlebarMediaBridge.shared.onEvent = { [weak self] message in
@@ -1651,6 +1653,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         bridge.isEnabled = handlebarSwitch.isOn
         bridge.swapsDirection = handlebarDirectionSwitch.isOn
         bridge.restoresVolume = handlebarRestoreSwitch.isOn
+        bridge.blocksEntKey = handlebarEntSwitch.isOn
         // 运行中即时生效。
         bridge.stop()
         if running && bridge.isEnabled { bridge.start() }
@@ -1660,12 +1663,13 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private func handlebarPage() -> SettingsPageController {
         page(CWL("车把按键")) { [unowned self] in
             [
-                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进并转换为 CarPlay 媒体键，控制当前播放的音乐 App。开始投屏后生效。"), [
+                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进：短按切歌（CarPlay 媒体键），长按 2 秒调整音量。短按确认约需 0.3 秒，切歌略有延迟属正常。"), [
                     .control(CWL("音量摇杆转换为切歌"), icon: ("music.note", .systemGreen), handlebarSwitch),
                     .control(CWL("上=上一曲、下=下一曲"), icon: ("arrow.up.arrow.down", .systemBlue), handlebarDirectionSwitch),
-                    .control(CWL("切歌后恢复音量"), icon: ("speaker.wave.2", .systemOrange), handlebarRestoreSwitch)
+                    .control(CWL("切歌后恢复音量"), icon: ("speaker.wave.2", .systemOrange), handlebarRestoreSwitch),
+                    .control(CWL("屏蔽车机 ENT 键"), icon: ("hand.raised", .systemRed), handlebarEntSwitch)
                 ]),
-                SettingsSection(footer: CWL("来电响铃或通话中按下任意方向键 = 接听/挂断（CarPlay 电话键）。按键期间音量会被复位，若不希望可关闭上方的「切歌后恢复音量」。"), [
+                SettingsSection(footer: CWL("ENT 键经车机蓝牙发送播放命令，iOS 会因此把声音路由切到车机蓝牙——屏蔽它可保持你的播放通道不变。副作用：蓝牙耳机的播放/暂停键也会被屏蔽，请改用 iPhone 控制中心控制播放。来电响铃或通话中按任意方向键 = 接听/挂断。"), [
                     .info(CWL("上次按键"), handlebarLastEvent.isEmpty ? CWL("尚未触发") : handlebarLastEvent)
                 ])
             ]
