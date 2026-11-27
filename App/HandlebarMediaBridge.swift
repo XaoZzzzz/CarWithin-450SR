@@ -103,17 +103,18 @@ final class HandlebarMediaBridge {
         let action = isUp ? upAction : downAction
         onEvent?("车把「\(isUp ? "上" : "下")」键 → \(action.label)")
         switch action {
-        case .nextTrack: sendMediaCommand(\.nextTrackCommand, name: "下一曲")
-        case .previousTrack: sendMediaCommand(\.previousTrackCommand, name: "上一曲")
+        case .nextTrack: sendMediaCommand(next: true, name: "下一曲")
+        case .previousTrack: sendMediaCommand(next: false, name: "上一曲")
         case .none: break
         }
         if restoresVolume { DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in self?.restoreVolume(to: old) } }
     }
 
     /// 经系统把媒体命令转发给当前「正在播放」的音乐 App。
-    private func sendMediaCommand(_ keyPath: KeyPath<MPRemoteCommandCenter, MPRemoteCommand>, name: String) {
+    private func sendMediaCommand(next: Bool, name: String) {
         let center = MPRemoteCommandCenter.shared()
-        let status = center[keyPath: keyPath].send()
+        let command: MPRemoteCommand = next ? center.nextTrackCommand : center.previousTrackCommand
+        let status = command.send()
         if status == .commandFailed {
             log("车把切歌（\(name)）未送达：当前没有正在播放的音乐 App")
         }

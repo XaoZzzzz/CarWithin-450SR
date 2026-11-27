@@ -1629,13 +1629,13 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     // MARK: 车把按键（音量摇杆 → 切歌）
 
     private func configureHandlebar() {
-        handlebarSwitch.isOn = HandlebarMediaBridge.shared().isEnabled
+        handlebarSwitch.isOn = HandlebarMediaBridge.shared.isEnabled
         handlebarDirectionSwitch.isOn = UserDefaults.standard.bool(forKey: "handlebarSwapped")
-        handlebarRestoreSwitch.isOn = HandlebarMediaBridge.shared().restoresVolume
+        handlebarRestoreSwitch.isOn = HandlebarMediaBridge.shared.restoresVolume
         [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch].forEach {
             $0.addTarget(self, action: #selector(handlebarSettingsChanged), for: .valueChanged)
         }
-        HandlebarMediaBridge.shared().onEvent = { [weak self] message in
+        HandlebarMediaBridge.shared.onEvent = { [weak self] message in
             guard let self else { return }
             self.handlebarLastEvent = message
             self.log(message)
@@ -1643,7 +1643,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     }
 
     @objc private func handlebarSettingsChanged() {
-        let bridge = HandlebarMediaBridge.shared()
+        let bridge = HandlebarMediaBridge.shared
         bridge.isEnabled = handlebarSwitch.isOn
         bridge.restoresVolume = handlebarRestoreSwitch.isOn
         UserDefaults.standard.set(handlebarDirectionSwitch.isOn, forKey: "handlebarSwapped")
@@ -1882,7 +1882,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         if keepAliveSwitch.isOn { keepAlive.start() }
         view.endEditing(true)
         running = true; modeControl.isEnabled = false; setEditing(false)
-        HandlebarMediaBridge.shared().start()
+        HandlebarMediaBridge.shared.start()
         antBMS.recordingVehicleName = headUnitOutput.selectedTitle
         antBMS.setReceiving(true)
         startButton.setTitle(CWL("停止接收"), for: .normal)
@@ -1963,7 +1963,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     }
 
     private func stop() {
-        HandlebarMediaBridge.shared().stop()
+        HandlebarMediaBridge.shared.stop()
         antBMS.setReceiving(false)
         localStartupID = nil
         networkStartupTask?.cancel()
@@ -2634,7 +2634,7 @@ extension ReceiverViewController {
                 return self.autoStartBluetoothSwitch.isOn ? CWL("车机蓝牙") : CWL("仪表 Wi-Fi")
             }) { [unowned self] in self.autoStartPage() })
             connection.append(.page(CWL("车把按键"), icon: ("music.note", .systemGreen), detail: { [unowned self] in
-                if !HandlebarMediaBridge.shared().isEnabled { return CWL("关闭") }
+                if !HandlebarMediaBridge.shared.isEnabled { return CWL("关闭") }
                 return CWL("已启用")
             }) { [unowned self] in self.handlebarPage() })
             connection.append(.control(CWL("当前输出"), icon: ("point.3.connected.trianglepath.dotted", .systemIndigo), headUnitOutput))
