@@ -16,7 +16,7 @@ import AVFoundation
 import MediaPlayer
 import CallKit
 
-final class HandlebarMediaBridge {
+final class HandlebarMediaBridge: NSObject {
 
     static let shared = HandlebarMediaBridge()
 
