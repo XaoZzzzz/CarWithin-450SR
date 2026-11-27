@@ -315,6 +315,16 @@ final class NativeReceiver {
             }
         }
     }
+    /// ENT 转发入口：按原始语义下发精确媒体键（play/pause/playPause），
+    /// 不经过 CarPlayControl（那个枚举会被浏览器消息解析共用，避免扩散改动）。
+    func pressMediaKey(_ key: CarPlayInfo.MediaKey) {
+        queue.async { [weak self] in
+            guard let self, let media = self.activeMedia else {
+                self?.log(CWL("CarPlay 尚未连接，无法发送媒体键")); return
+            }
+            media.pressHID(CarPlayInfo.HID.media, Data([key.rawValue]), release: Data([0]))
+        }
+    }
     /// Day/night appearance for CarPlay. Remembered across sessions and sent once the event channel is up.
     func setNightMode(_ night: Bool) {
         queue.async { [weak self] in

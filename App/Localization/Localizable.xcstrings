@@ -388,7 +388,8 @@
             "value": "AirPlay 已恢复接收新画面。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "AirPlay 已暂停，可以重试。": {
       "localizations": {
@@ -404,7 +405,8 @@
             "value": "AirPlay 已暂停，可以重试。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "AirPlay 播放器：item={1} time={2} 外部视频={3} 路由={4} 等待={5} 错误={6}": {
       "extractionState": "manual",
@@ -454,7 +456,8 @@
             "value": "AirPlay 正在缓冲画面…"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "AirPlay 画面加载失败，可以重试。": {
       "extractionState": "manual",
@@ -487,7 +490,8 @@
             "value": "AirPlay 缓冲时间较长，可以重试。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "AirPlay 身份创建失败：{1}": {
       "extractionState": "manual",
@@ -537,7 +541,8 @@
             "value": "AirPlay 长时间未收到新画面，重新建立 CarPlay 会话"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "AirPlay（实验）": {
       "extractionState": "manual",
@@ -655,7 +660,8 @@
             "value": "BMS 统计与记录"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "BMS 统计预览": {
       "localizations": {
@@ -671,7 +677,8 @@
             "value": "BMS 统计预览"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "Bonjour 注册状态：{1}": {
       "extractionState": "manual",
@@ -3480,7 +3487,8 @@
             "value": "一起让更多车型用上 CarPlay。感谢大家的代码、适配测试、资料与赞赏支持。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "七寸 KCP 视频分包入队失败": {
       "extractionState": "manual",
@@ -3960,7 +3968,8 @@
             "value": "九号 4.3 寸"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "九号 4.3 寸 JPEG：已发送 {1} 帧，发送丢弃 {2} 帧，当前 {3} 字节": {
       "extractionState": "manual",
@@ -4316,7 +4325,8 @@
             "value": "今天"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "从 HTTP 接收页开始": {
       "extractionState": "manual",
@@ -4366,7 +4376,8 @@
             "value": "以下为作者旗下多个项目共用的赞赏名单，感谢每一份支持。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "仪表 IP 地址": {
       "extractionState": "manual",
@@ -4710,7 +4721,8 @@
             "value": "优先使用备注昵称。未备注时，微信使用赞赏昵称，支付宝使用脱敏姓名。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "会话启动超时（链路={1}，认证={2}，识别={3}）": {
       "extractionState": "manual",
@@ -4845,7 +4857,8 @@
             "value": "作者旗下多个项目共用这份赞赏名单，感谢大家对开发与维护的支持。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "使用 ACME DNS-01 等方式在外部申请该域名的公开证书，导出包含私钥与完整证书链的 P12 后导入。当前不自动签发或续期；到期后需重新导入。仅在本机受信任不能保证车机信任；域名和证书也不能保证绕过车机的私网限制。": {
       "extractionState": "manual",
@@ -4946,7 +4959,8 @@
             "value": "保存二维码图片？"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "保存到文件": {
       "extractionState": "manual",
@@ -4979,7 +4993,8 @@
             "value": "保存到相册"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "保存到系统相册，方便稍后在支付应用中扫码。": {
       "localizations": {
@@ -4995,7 +5010,8 @@
             "value": "保存到系统相册，方便稍后在支付应用中扫码。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "保存失败": {
       "localizations": {
@@ -5011,7 +5027,8 @@
             "value": "保存失败"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "保存本机身份": {
       "extractionState": "manual",
@@ -5061,7 +5078,8 @@
             "value": "保存赞赏码"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "信息": {
       "extractionState": "manual",
@@ -5094,7 +5112,8 @@
             "value": "修改、补登与核对"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "修改地址或证书后，重新启动 CarPlay 生效。": {
       "extractionState": "manual",
@@ -5297,7 +5316,8 @@
             "value": "先开启 BMS"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "先核对两台设备的 Wi-Fi 和首页地址。能打开但没画面时，先试 HTTP，再把画面设为 H.264、720P、30 帧。": {
       "extractionState": "manual",
@@ -5347,7 +5367,8 @@
             "value": "全部时间"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "全部状态": {
       "localizations": {
@@ -5363,7 +5384,8 @@
             "value": "全部状态"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "全部设备": {
       "localizations": {
@@ -5379,7 +5401,8 @@
             "value": "全部设备"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "全部车辆": {
       "localizations": {
@@ -5395,7 +5418,8 @@
             "value": "全部车辆"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "关": {
       "extractionState": "manual",
@@ -5513,7 +5537,8 @@
             "value": "其他支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "其他资源": {
       "extractionState": "manual",
@@ -5648,7 +5673,8 @@
             "value": "分享或保存收款码"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "分辨率": {
       "extractionState": "manual",
@@ -5879,7 +5905,8 @@
             "value": "删除失败"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "加入仪表 Wi-Fi 后，先在这里启动 CarPlay，再到九号出行开启投屏导航，并让九号出行留在后台。": {
       "extractionState": "manual",
@@ -5963,7 +5990,8 @@
             "value": "包含区间极值"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "匹配私钥": {
       "extractionState": "manual",
@@ -5996,7 +6024,8 @@
             "value": "匿名与不上名单"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "匿名或不上名单": {
       "localizations": {
@@ -6012,7 +6041,8 @@
             "value": "匿名或不上名单"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "协议版本 {1}.{2}，{3}": {
       "extractionState": "manual",
@@ -6181,7 +6211,8 @@
             "value": "反馈与建议"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "发布构建 {1}": {
       "extractionState": "manual",
@@ -6401,7 +6432,8 @@
             "value": "发送邮件"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "取消": {
       "extractionState": "manual",
@@ -6547,7 +6579,8 @@
             "value": "可分享或保存图片，在微信中识别二维码。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "可在付款时备注「昵称：你的名字」。未指定时，微信使用赞赏记录中的昵称，支付宝使用账单中的脱敏姓名。名单显示昵称及累计金额，由作者定期整理。": {
       "localizations": {
@@ -6563,7 +6596,8 @@
             "value": "可在付款时备注「昵称：你的名字」。未指定时，微信使用赞赏记录中的昵称，支付宝使用账单中的脱敏姓名。名单显示昵称及累计金额，由作者定期整理。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "可在付款时备注「昵称：你的名字」。未指定时，微信使用赞赏记录中的昵称，支付宝使用账单中的脱敏姓名。名单由作者定期整理。": {
       "localizations": {
@@ -6579,7 +6613,8 @@
             "value": "可在付款时备注「昵称：你的名字」。未指定时，微信使用赞赏记录中的昵称，支付宝使用账单中的脱敏姓名。名单由作者定期整理。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "可在微信「扫一扫」中从相册选择这张赞赏码。": {
       "localizations": {
@@ -6595,7 +6630,8 @@
             "value": "可在微信「扫一扫」中从相册选择这张赞赏码。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "可在支付宝「扫一扫」中从相册选择这张收款码。": {
       "localizations": {
@@ -6611,7 +6647,8 @@
             "value": "可在支付宝「扫一扫」中从相册选择这张收款码。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "可打开支付宝，或保存图片后扫码。": {
       "localizations": {
@@ -6627,7 +6664,8 @@
             "value": "可打开支付宝，或保存图片后扫码。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "可硬解": {
       "extractionState": "manual",
@@ -7000,7 +7038,8 @@
             "value": "同一位支持者的多次赞赏，经核对后累计整理，以昵称颜色表达感谢。软件内仅展示昵称，不展示金额。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "名单与颜色": {
       "localizations": {
@@ -7016,7 +7055,8 @@
             "value": "名单与颜色"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "名单定期整理；离线设备可能稍后同步。": {
       "localizations": {
@@ -7032,7 +7072,8 @@
             "value": "名单定期整理；离线设备可能稍后同步。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "名单更新": {
       "localizations": {
@@ -7048,7 +7089,8 @@
             "value": "名单更新"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "名单更新于 {1}。昵称有误、漏登或需要匿名、移除，可通过邮箱联系作者。": {
       "localizations": {
@@ -7064,7 +7106,8 @@
             "value": "名单更新于 {1}。昵称有误、漏登或需要匿名、移除，可通过邮箱联系作者。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "名单说明": {
       "localizations": {
@@ -7080,7 +7123,8 @@
             "value": "名单说明"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "后台与画中画": {
       "extractionState": "manual",
@@ -7946,7 +7990,8 @@
             "value": "备注「匿名」隐藏昵称；备注「不上名单」不展示。也可通过邮件修改或移除。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "复制": {
       "extractionState": "manual",
@@ -8030,7 +8075,8 @@
             "value": "复制内容"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "复制日志": {
       "extractionState": "manual",
@@ -8080,7 +8126,8 @@
             "value": "复制邮箱"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "多次支持经核对后累计，以昵称颜色致谢。软件内不显示金额。": {
       "localizations": {
@@ -8096,7 +8143,8 @@
             "value": "多次支持经核对后累计，以昵称颜色致谢。软件内不显示金额。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "夜间": {
       "extractionState": "manual",
@@ -8678,7 +8726,8 @@
             "value": "展示昵称"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "左舵": {
       "extractionState": "manual",
@@ -8762,7 +8811,8 @@
             "value": "已保存到相册"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "已保存片段": {
       "localizations": {
@@ -8778,7 +8828,8 @@
             "value": "已保存片段"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "已保存设备": {
       "localizations": {
@@ -8794,7 +8845,8 @@
             "value": "已保存设备"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "已保存，启动时校验": {
       "extractionState": "manual",
@@ -8991,7 +9043,8 @@
             "value": "已复制邮箱"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "已存储的 AirPlay 身份无效": {
       "extractionState": "manual",
@@ -9143,7 +9196,8 @@
             "value": "已结束"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "已解码 {1} 访问单元 {2}（{3} 字节）": {
       "extractionState": "manual",
@@ -9278,7 +9332,8 @@
             "value": "已超过 10 秒未收到新画面，可重试连接 CarPlay。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "已载入": {
       "extractionState": "manual",
@@ -9373,7 +9428,8 @@
             "value": "希望保留金额但隐藏昵称，请备注「匿名」；不希望列入名单，请备注「不上名单」。也可以发邮件申请修改或移除。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "希望隐藏昵称，请备注「匿名」；不希望列入名单，请备注「不上名单」。也可以发邮件申请修改或移除。": {
       "localizations": {
@@ -9389,7 +9445,8 @@
             "value": "希望隐藏昵称，请备注「匿名」；不希望列入名单，请备注「不上名单」。也可以发邮件申请修改或移除。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "帧率": {
       "extractionState": "manual",
@@ -9456,7 +9513,8 @@
             "value": "开发与测试贡献"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "开发者共用名单": {
       "localizations": {
@@ -9472,7 +9530,8 @@
             "value": "开发者共用名单"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "开启后 iPhone 会记住该车机热点，车机通电后自动回连，无需每次手动选择。首次开启需要系统确认。": {
       "extractionState": "manual",
@@ -9516,7 +9575,8 @@
             "value": "开始新记录"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "开放网络": {
       "extractionState": "manual",
@@ -9719,7 +9779,8 @@
             "value": "当前设备未能打开微信支付链接。可保存赞赏码，再到微信中识别。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "当前设备未能打开支付宝链接。可保存收款码，再到支付宝中识别。": {
       "localizations": {
@@ -9735,7 +9796,8 @@
             "value": "当前设备未能打开支付宝链接。可保存收款码，再到支付宝中识别。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "当前输出": {
       "extractionState": "manual",
@@ -9785,7 +9847,8 @@
             "value": "微信 / 支付宝"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "微信赞赏": {
       "localizations": {
@@ -9801,7 +9864,8 @@
             "value": "微信赞赏"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "微信赞赏码": {
       "localizations": {
@@ -9817,7 +9881,8 @@
             "value": "微信赞赏码"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "忽略无效触控数据": {
       "extractionState": "manual",
@@ -9867,7 +9932,8 @@
             "value": "感谢你对开发与维护的支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "感谢帮助优化代码、适配车型、实车测试和提供资料的朋友。": {
       "localizations": {
@@ -9883,7 +9949,8 @@
             "value": "感谢帮助优化代码、适配车型、实车测试和提供资料的朋友。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "感谢帮助实车复测、提供资料和反馈的朋友。": {
       "localizations": {
@@ -9899,7 +9966,8 @@
             "value": "感谢帮助实车复测、提供资料和反馈的朋友。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "感谢每一位同行者": {
       "localizations": {
@@ -9915,7 +9983,8 @@
             "value": "感谢每一位同行者"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "感谢赞赏支持": {
       "localizations": {
@@ -9931,7 +10000,8 @@
             "value": "感谢赞赏支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "打开 HTTPS 接收页": {
       "extractionState": "manual",
@@ -9998,7 +10068,8 @@
             "value": "打开微信赞赏"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "打开或分享 IPA": {
       "extractionState": "manual",
@@ -10031,7 +10102,8 @@
             "value": "打开支付宝"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "打开时先显示本机保存的名单，联网获取到新版后更新。网络不可用时仍可查看；长期离线或旧版软件中的名单可能延后同步。": {
       "localizations": {
@@ -10047,7 +10119,8 @@
             "value": "打开时先显示本机保存的名单，联网获取到新版后更新。网络不可用时仍可查看；长期离线或旧版软件中的名单可能延后同步。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "打开设置": {
       "localizations": {
@@ -10063,7 +10136,8 @@
             "value": "打开设置"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "投送到 iPad": {
       "extractionState": "manual",
@@ -10113,7 +10187,8 @@
             "value": "报告生成失败"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "按屏幕设置图标大小": {
       "extractionState": "manual",
@@ -10656,7 +10731,8 @@
             "value": "支付宝收款码"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "支持": {
       "extractionState": "manual",
@@ -10689,7 +10765,8 @@
             "value": "支持作者任意一个项目，均可列入这份共用赞赏名单。适配、代码和测试贡献单独致谢。赞赏自愿，不影响功能使用和适配安排。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "支持致谢": {
       "localizations": {
@@ -10705,7 +10782,8 @@
             "value": "支持致谢"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "收到 BLE 消息 {1}（{2} 字节）": {
       "extractionState": "manual",
@@ -10772,7 +10850,8 @@
             "value": "收到数据后显示电压趋势"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "收到视频帧后显示层仍未就绪": {
       "extractionState": "manual",
@@ -10805,7 +10884,8 @@
             "value": "改名、补登与核对"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "数据格式错误：{1}": {
       "extractionState": "manual",
@@ -11268,7 +11348,8 @@
             "value": "无法导出"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "无法开启": {
       "extractionState": "manual",
@@ -11533,7 +11614,8 @@
             "value": "旧版抽样，可能遗漏瞬时压降"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "时钟同步对端地址": {
       "extractionState": "manual",
@@ -11583,7 +11665,8 @@
             "value": "时间"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "春风 5 寸": {
       "localizations": {
@@ -11599,7 +11682,8 @@
             "value": "春风 5 寸"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "春风 6.2 寸": {
       "localizations": {
@@ -11615,7 +11699,8 @@
             "value": "春风 6.2 寸"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "昵称与展示": {
       "localizations": {
@@ -11631,7 +11716,8 @@
             "value": "昵称与展示"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "昵称颜色按累计赞赏金额区分，仅用于表达感谢，不展示具体金额。": {
       "localizations": {
@@ -11647,7 +11733,8 @@
             "value": "昵称颜色按累计赞赏金额区分，仅用于表达感谢，不展示具体金额。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "显示层需要恢复：{1}": {
       "extractionState": "manual",
@@ -11867,7 +11954,8 @@
             "value": "最近 30 天"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "最近 7 天": {
       "localizations": {
@@ -11883,7 +11971,8 @@
             "value": "最近 7 天"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "最高分辨率": {
       "extractionState": "manual",
@@ -12086,7 +12175,8 @@
             "value": "未能打开支付宝"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "未能打开支付应用": {
       "localizations": {
@@ -12102,7 +12192,8 @@
             "value": "未能打开支付应用"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "未获得 Wi-Fi 地址。请连接正确的 Wi-Fi 后重试。": {
       "extractionState": "manual",
@@ -12475,7 +12566,8 @@
             "value": "本次电压趋势"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "本次统计": {
       "localizations": {
@@ -12491,7 +12583,8 @@
             "value": "本次统计"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "本次连接已自动重启 2 次，不再重启：{1}": {
       "extractionState": "manual",
@@ -12597,7 +12690,8 @@
             "value": "极核 AE2 Pro 5 寸"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "极核 AE4 MAX2+ 6.2 寸": {
       "extractionState": "manual",
@@ -12630,7 +12724,8 @@
             "value": "极核 SE+ 5/5.5 寸"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "极核 TCP{1} 已回连": {
       "extractionState": "manual",
@@ -12833,7 +12928,8 @@
             "value": "查看贡献与支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "核对 iPhone 连的 Wi-Fi 和预设是否同名。仍连不上，关开一次 Wi-Fi，回到 App 重新启动。": {
       "extractionState": "manual",
@@ -13296,7 +13392,8 @@
             "value": "正在记录"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "正在请求把本机 CarPlay 投送到 {1}（{2}:{3}）": {
       "extractionState": "manual",
@@ -13601,7 +13698,8 @@
             "value": "每一份支持，都值得感谢"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "没有画面时": {
       "extractionState": "manual",
@@ -13668,7 +13766,8 @@
             "value": "测试与资料支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "测试本机传输能力": {
       "extractionState": "manual",
@@ -14041,7 +14140,8 @@
             "value": "状态"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "用 iPhone 当前的声音输出。想让车机出声，请先配对并选中车机蓝牙。": {
       "extractionState": "manual",
@@ -14125,7 +14225,8 @@
             "value": "电压 CSV 预览"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "电池记录": {
       "localizations": {
@@ -14141,7 +14242,8 @@
             "value": "电池记录"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "电池设备": {
       "localizations": {
@@ -14157,7 +14259,8 @@
             "value": "电池设备"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "画中画": {
       "extractionState": "manual",
@@ -14728,7 +14831,8 @@
             "value": "等待新的 BMS 实时数据"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "等待电压数据": {
       "localizations": {
@@ -14744,7 +14848,8 @@
             "value": "等待电压数据"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "等待视频拉帧请求": {
       "extractionState": "manual",
@@ -14794,7 +14899,8 @@
             "value": "筛选历史"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "系统媒体服务重置": {
       "extractionState": "manual",
@@ -14957,7 +15063,8 @@
             "value": "紫色支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "累计与颜色": {
       "localizations": {
@@ -14973,7 +15080,8 @@
             "value": "累计与颜色"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "绑定 {1}:{2}": {
       "extractionState": "manual",
@@ -15006,7 +15114,8 @@
             "value": "结束并保存本次记录"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "绿色支持": {
       "localizations": {
@@ -15022,7 +15131,8 @@
             "value": "绿色支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "编码": {
       "extractionState": "manual",
@@ -15327,7 +15437,8 @@
             "value": "联系作者"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "自动": {
       "extractionState": "manual",
@@ -15455,7 +15566,8 @@
             "value": "致谢名单持续整理中"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "若提示 UDP 5012 被占用，先停止 CarWithin，退出九号出行投屏导航及其他投屏 App，再按上面的顺序重试。": {
       "extractionState": "manual",
@@ -15697,7 +15809,8 @@
             "value": "蓝色支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "视频 NAL 内容": {
       "extractionState": "manual",
@@ -16240,7 +16353,8 @@
             "value": "记录中"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "记录帮助改进代码、适配车型的朋友及其贡献。": {
       "localizations": {
@@ -16256,7 +16370,8 @@
             "value": "记录帮助改进代码、适配车型的朋友及其贡献。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "记录预览": {
       "localizations": {
@@ -16272,7 +16387,8 @@
             "value": "记录预览"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "设备": {
       "extractionState": "manual",
@@ -16690,7 +16806,8 @@
             "value": "请在系统设置中允许 CarWithin 添加照片，然后重试。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "请在设置中添加或选择 Wi-Fi 预设。": {
       "extractionState": "manual",
@@ -16876,7 +16993,8 @@
             "value": "请稍后重试，也可以使用支付宝扫描上方收款码。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "请稍后重试，或检查相册权限及可用存储空间。": {
       "localizations": {
@@ -16892,7 +17010,8 @@
             "value": "请稍后重试，或检查相册权限及可用存储空间。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "请说明当前昵称和修改内容。漏登、累计有误或需要合并时，可提供支付截图或订单号，并遮挡无关信息。": {
       "localizations": {
@@ -16908,7 +17027,8 @@
             "value": "请说明当前昵称和修改内容。漏登、累计有误或需要合并时，可提供支付截图或订单号，并遮挡无关信息。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "请输入 8–63 字节的 Wi-Fi 密码，开放网络则留空。": {
       "extractionState": "manual",
@@ -17162,7 +17282,8 @@
             "value": "请邮件说明当前展示名称和希望修改的内容。漏登、累计有误或需要合并记录时，可提供支付截图或订单号，便于核对；请遮挡无关信息。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "读取 H.264 输出失败（{1}）": {
       "extractionState": "manual",
@@ -17280,7 +17401,8 @@
             "value": "贡献与支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "质量优先": {
       "extractionState": "manual",
@@ -17313,7 +17435,8 @@
             "value": "赞赏与支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "赞赏名单修改或核对": {
       "localizations": {
@@ -17329,7 +17452,8 @@
             "value": "赞赏名单修改或核对"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "赞赏完全自愿，感谢每一份心意。": {
       "localizations": {
@@ -17345,7 +17469,8 @@
             "value": "赞赏完全自愿，感谢每一份心意。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "赞赏自愿，不影响软件使用或适配安排。": {
       "localizations": {
@@ -17361,7 +17486,8 @@
             "value": "赞赏自愿，不影响软件使用或适配安排。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "跟随主接收屏幕（{1}）": {
       "extractionState": "manual",
@@ -17957,7 +18083,8 @@
             "value": "轻点保存，长按确认保存"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "轻点打开支付宝": {
       "localizations": {
@@ -17973,7 +18100,8 @@
             "value": "轻点打开支付宝"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "轻点打开，长按保存二维码": {
       "localizations": {
@@ -17989,7 +18117,8 @@
             "value": "轻点打开，长按保存二维码"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "轻点选用，左滑后确认删除。": {
       "extractionState": "manual",
@@ -18090,7 +18219,8 @@
             "value": "这份名单由作者旗下多个项目共用，感谢你帮助项目持续改进。"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "连上车机蓝牙后自动启动": {
       "extractionState": "manual",
@@ -18338,7 +18468,8 @@
             "value": "适配与开发贡献"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "选择": {
       "extractionState": "manual",
@@ -18575,7 +18706,8 @@
             "value": "金色支持"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "锁屏与后台继续运行": {
       "extractionState": "manual",
@@ -18676,7 +18808,8 @@
             "value": "需要保存照片的权限"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "需要导入 MFi 身份": {
       "extractionState": "manual",
@@ -18884,7 +19017,8 @@
             "value": "预览并导出完整统计 JSON"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "预览并导出本次统计": {
       "localizations": {
@@ -18900,7 +19034,8 @@
             "value": "预览并导出本次统计"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "预览并导出电压 CSV": {
       "localizations": {
@@ -18916,7 +19051,8 @@
             "value": "预览并导出电压 CSV"
           }
         }
-      }
+      },
+      "extractionState": "manual"
     },
     "预设比例": {
       "extractionState": "manual",
@@ -19172,6 +19308,105 @@
           }
         }
       }
+    },
+    "车把按键桥已启用（短按切歌 · 长按 2 秒调音量 · ENT 转 CarPlay）": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar bridge enabled (short press skips · hold 2 s for volume · ENT via CarPlay)"
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "当前输出已不在车机蓝牙上，跳过音量复位": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Output is no longer on the bike Bluetooth, skipping volume restore"
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "车机 ENT 键 → CarPlay {1}（不动音频路由）": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bike ENT key → CarPlay {1} (audio route untouched)"
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "CarPlay 尚未连接，无法发送媒体键": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CarPlay not connected, cannot send media key"
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "ENT 键转 CarPlay 暂停": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forward ENT key to CarPlay pause"
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进：短按切歌（CarPlay 媒体键），长按 2 秒调整音量。短按确认约需 0.3 秒，切歌略有延迟属正常。连接蓝牙耳机时只认车机蓝牙的步进：耳机的音量键不会被误判为切歌，也不会改动耳机音量。": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The 450SR handlebar up/down keys change the iPhone volume over bike Bluetooth while mirroring. This feature watches the volume steps: short press skips tracks (CarPlay media key), hold 2 s adjusts volume. Short press needs ~0.3 s to confirm, so a slight delay is normal. With Bluetooth headphones connected only bike-Bluetooth steps are recognized: headphone volume keys won't be mistaken for track skips, and headphone volume is never touched."
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "ENT 键经车机蓝牙发来播放/暂停命令，iOS 会因此把声音路由切到车机蓝牙。开启后命令被拦截，改用 CarPlay 媒体键在手机上执行播放/暂停：暂停功能保留，但不会切换声音输出通道；蓝牙耳机的播放键也照常工作（同样经 CarPlay 转发）。来电响铃或通话中按任意方向键 = 接听/挂断。": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The ENT key sends play/pause commands over bike Bluetooth, which makes iOS switch the audio route to the bike. When enabled the command is intercepted and re-issued as a CarPlay media key on the phone: pause still works, but the audio output channel is never switched; headphone play keys keep working too (also forwarded via CarPlay). While a call rings or is active, any direction key = answer/hang up."
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "播放": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Play"
+          }
+        }
+      },
+      "extractionState": "manual"
+    },
+    "暂停": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pause"
+          }
+        }
+      },
+      "extractionState": "manual"
     }
   },
   "version": "1.0"

@@ -12,8 +12,12 @@
 //   2. 来电响铃或通话中按下按键 → CarPlay HID 电话 hookSwitch（接听/挂断）；
 //   3. 短按确认后把音量一次性复位到按键前的值（避免音量随切歌累积变化）；
 //      复位在单击确认后统一执行，减少 MPVolumeView 触发音频路由重评估的次数；
-//   4. 可选屏蔽车机 ENT 键：ENT 经车机蓝牙以 AVRCP 播放/暂停命令到达 iPhone，
-//      iOS 收到播放命令会自动把音频路由切到车机蓝牙——注册系统命令拦截并吞掉。
+//      当前输出不是车机蓝牙（如蓝牙耳机在用）时跳过复位，避免把耳机音量拽来拽去；
+//   4. ENT 键：经车机蓝牙以 AVRCP 播放/暂停命令到达 iPhone，iOS 收到播放命令会自动把
+//      音频路由切到车机蓝牙。本模块把命令拦截吞掉，改用 CarPlay HID 媒体键在手机上
+//      执行播放/暂停——暂停功能保留，但不切换声音输出通道；蓝牙耳机的播放键也照常工作；
+//   5. 蓝牙耳机冲突防护：音量步进只在当前输出是车机蓝牙（名称匹配过滤，与自动启动
+//      共用「蓝牙名称包含」设置）时才被当作车把按键，耳机的音量键不会被误判为切歌。
 
 import AVFoundation
 import MediaPlayer
@@ -66,7 +70,7 @@ final class HandlebarMediaBridge: NSObject {
         get { UserDefaults.standard.object(forKey: Self.restoreKey) == nil ? true : UserDefaults.standard.bool(forKey: Self.restoreKey) }
         set { UserDefaults.standard.set(newValue, forKey: Self.restoreKey) }
     }
-    var blocksEntKey: Bool {
+    var forwardsEntKey: Bool {
         get { UserDefaults.standard.object(forKey: Self.blockEntKey) == nil ? true : UserDefaults.standard.bool(forKey: Self.blockEntKey) }
         set { UserDefaults.standard.set(newValue, forKey: Self.blockEntKey) }
     }
@@ -75,6 +79,8 @@ final class HandlebarMediaBridge: NSObject {
     var onEvent: ((String) -> Void)?
     /// 命令回调：由 UI 层注入，转发给 NativeReceiver.press(.next/.previous/.hookSwitch)。
     var onCommand: ((CarPlayControl) -> Void)?
+    /// 媒体键回调：ENT 播放/暂停经 CarPlay HID 精确下发（play/pause/playPause）。
+    var onMediaKey: ((CarPlayInfo.MediaKey) -> Void)?
 
     private override init() {}
 
@@ -90,8 +96,8 @@ final class HandlebarMediaBridge: NSObject {
         let observer = CXCallObserver()
         observer.setDelegate(self, queue: .main)
         callObserver = observer
-        if blocksEntKey { installEntBlock() }
-        log("车把按键桥已启用（短按切歌 · 长按 2 秒调音量）")
+        if forwardsEntKey { installEntForward() }
+        log("车把按键桥已启用（短按切歌 · 长按 2 秒调音量 · ENT 转 CarPlay）")
     }
 
     func stop() {
@@ -103,7 +109,7 @@ final class HandlebarMediaBridge: NSObject {
         pendingTap?.cancel()
         pendingTap = nil
         volumeAdjusting = false
-        removeEntBlock()
+        removeEntForward()
         if isEnabled { log("车把按键桥已停用") }
     }
 
@@ -112,11 +118,37 @@ final class HandlebarMediaBridge: NSObject {
     /// iOS 系统音量步长（1/16）。
     private static let stepSize: Float = 0.0625
 
+    /// 蓝牙名称过滤，与自动启动的「蓝牙名称包含」共用同一个设置；留空匹配任意蓝牙。
+    private var bikeAudioFilter: String {
+        let name = UserDefaults.standard.string(forKey: "autoStartBluetoothName") ?? "CFMOTO"
+        return name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    /// 当前输出里是否存在匹配过滤的蓝牙音频端口（车机蓝牙在用时才有）。
+    /// 蓝牙耳机单独连接时，路由不在车机蓝牙上，这里返回 nil。
+    private func currentBikeAudioName() -> String? {
+        let filter = bikeAudioFilter
+        for port in AVAudioSession.sharedInstance().currentRoute.outputs {
+            switch port.portType {
+            case .bluetoothA2DP, .bluetoothHFP, .bluetoothLE:
+                if filter.isEmpty || port.portName.localizedCaseInsensitiveContains(filter) {
+                    return port.portName
+                }
+            default:
+                continue
+            }
+        }
+        return nil
+    }
+
     private func volumeChanged(from old: Float, to new: Float) {
         defer { lastVolume = new }
         // 自我抑制：复位音量引发的变化不当作按键。
         let now = ProcessInfo.processInfo.systemUptime
         if now < ignoreUntil { return }
+        // 蓝牙耳机冲突防护：当前输出不在车机蓝牙上时，音量步进一律忽略——
+        // 耳机自己的音量键、或车机音量键（不影响耳机路由）都不会被误判为切歌/接听。
+        guard currentBikeAudioName() != nil else { return }
         let delta = new - old
         guard abs(delta) >= Self.stepSize / 2 else { return }
         let isUp = delta > 0
@@ -166,7 +198,16 @@ final class HandlebarMediaBridge: NSObject {
         onCommand?(isNext ? .next : .previous)
         if restoresVolume {
             // 复位放在单击确认后一次性执行：减少 MPVolumeView 触发路由重评估的频率。
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { [weak self] in self?.restoreVolume(to: self?.baseVolume ?? 0) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) { [weak self] in
+                guard let self else { return }
+                // 当前输出已不是车机蓝牙（比如中途插上蓝牙耳机）就不复位：
+                // MPVolumeView 写音量会触发路由重评估，可能把声音从耳机拽到车机。
+                guard self.currentBikeAudioName() != nil else {
+                    self.onEvent?("当前输出已不在车机蓝牙上，跳过音量复位")
+                    return
+                }
+                self.restoreVolume(to: self.baseVolume)
+            }
         }
     }
 
@@ -180,18 +221,32 @@ final class HandlebarMediaBridge: NSObject {
         }
     }
 
-    // MARK: - ENT（AVRCP 播放/暂停）拦截
+    // MARK: - ENT（AVRCP 播放/暂停）→ CarPlay 转发
 
-    private func installEntBlock() {
+    /// ENT 的 AVRCP 播放/暂停命令必须拦下来：iOS 收到播放命令会把音频路由切到车机蓝牙。
+    /// 拦下后改用 CarPlay HID 媒体键按原始语义（play/pause/playPause）精确执行，
+    /// 暂停功能保留，声音输出通道不动；蓝牙耳机的播放键同样经此转发，不受影响。
+    private func installEntForward() {
         let center = MPRemoteCommandCenter.shared()
         entHandlers = [
-            center.playCommand.addTarget { _ in .success },
-            center.pauseCommand.addTarget { _ in .success },
-            center.togglePlayPauseCommand.addTarget { _ in .success }
+            center.playCommand.addTarget { [weak self] _ in
+                self?.forwardEnt(.play, name: CWL("播放")); return .success
+            },
+            center.pauseCommand.addTarget { [weak self] _ in
+                self?.forwardEnt(.pause, name: CWL("暂停")); return .success
+            },
+            center.togglePlayPauseCommand.addTarget { [weak self] _ in
+                self?.forwardEnt(.playPause, name: CWL("播放/暂停")); return .success
+            }
         ]
     }
 
-    private func removeEntBlock() {
+    private func forwardEnt(_ key: CarPlayInfo.MediaKey, name: String) {
+        onEvent?(CWL("车机 ENT 键 → CarPlay {1}（不动音频路由）", [name]))
+        onMediaKey?(key)
+    }
+
+    private func removeEntForward() {
         guard !entHandlers.isEmpty else { return }
         let center = MPRemoteCommandCenter.shared()
         center.playCommand.removeTarget(entHandlers[0])
