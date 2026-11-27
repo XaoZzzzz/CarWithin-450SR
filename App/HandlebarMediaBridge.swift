@@ -114,7 +114,7 @@ final class HandlebarMediaBridge {
     private func sendMediaCommand(next: Bool, name: String) {
         let center = MPRemoteCommandCenter.shared()
         let command: MPRemoteCommand = next ? center.nextTrackCommand : center.previousTrackCommand
-        let status = command.send()
+        let status = command.send(targets: [])
         if status == .commandFailed {
             log("车把切歌（\(name)）未送达：当前没有正在播放的音乐 App")
         }
