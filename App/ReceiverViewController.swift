@@ -361,7 +361,10 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private let handlebarDirectionSwitch = UISwitch()
     private let handlebarRestoreSwitch = UISwitch()
     private let handlebarEntSwitch = UISwitch()
+    private let handlebarRouteSwitch = UISwitch()
     private var handlebarLastEvent = ""
+    /// 车把按键事件独立留存（应用内日志只有 200 行，链路日志几秒就会把按键事件冲掉）。
+    private var handlebarEventHistory: [String] = []
     private var launchedTransportTest = false
 
     override func viewDidAppear(_ animated: Bool) {
@@ -1634,12 +1637,15 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         handlebarDirectionSwitch.isOn = HandlebarMediaBridge.shared.swapsDirection
         handlebarRestoreSwitch.isOn = HandlebarMediaBridge.shared.restoresVolume
         handlebarEntSwitch.isOn = HandlebarMediaBridge.shared.forwardsEntKey
-        [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch, handlebarEntSwitch].forEach {
+        handlebarRouteSwitch.isOn = HandlebarMediaBridge.shared.restoresRoute
+        [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch, handlebarEntSwitch, handlebarRouteSwitch].forEach {
             $0.addTarget(self, action: #selector(handlebarSettingsChanged), for: .valueChanged)
         }
         HandlebarMediaBridge.shared.onEvent = { [weak self] message in
             guard let self else { return }
             self.handlebarLastEvent = message
+            self.handlebarEventHistory.append(message)
+            if self.handlebarEventHistory.count > 20 { self.handlebarEventHistory.removeFirst(self.handlebarEventHistory.count - 20) }
             self.log(message)
         }
         // 车把按键 → CarPlay HID 媒体键 / 电话 hookSwitch。
@@ -1658,6 +1664,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         bridge.swapsDirection = handlebarDirectionSwitch.isOn
         bridge.restoresVolume = handlebarRestoreSwitch.isOn
         bridge.forwardsEntKey = handlebarEntSwitch.isOn
+        bridge.restoresRoute = handlebarRouteSwitch.isOn
         // 运行中即时生效。
         bridge.stop()
         if running && bridge.isEnabled { bridge.start() }
@@ -1667,13 +1674,14 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private func handlebarPage() -> SettingsPageController {
         page(CWL("车把按键")) { [unowned self] in
             [
-                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进：短按切歌（CarPlay 媒体键），长按 2 秒调整音量。短按确认约需 0.3 秒，切歌略有延迟属正常。连接蓝牙耳机时只认车机蓝牙的步进：耳机的音量键不会被误判为切歌，也不会改动耳机音量。"), [
+                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进：单次按键 0.5 秒内确认 → 切歌（CarPlay 媒体键）并复位音量；0.5 秒内连续 3 次步进视为按住 → 松手音量保持（有意微调）；按住累计 2 秒 → 音量调整模式，松手结束。切歌略有延迟属正常。"), [
                     .control(CWL("音量摇杆转换为切歌"), icon: ("music.note", .systemGreen), handlebarSwitch),
                     .control(CWL("上=上一曲、下=下一曲"), icon: ("arrow.up.arrow.down", .systemBlue), handlebarDirectionSwitch),
                     .control(CWL("切歌后恢复音量"), icon: ("speaker.wave.2", .systemOrange), handlebarRestoreSwitch),
-                    .control(CWL("ENT 键转 CarPlay 暂停"), icon: ("hand.raised", .systemRed), handlebarEntSwitch)
+                    .control(CWL("ENT 键转 CarPlay 暂停"), icon: ("hand.raised", .systemRed), handlebarEntSwitch),
+                    .control(CWL("车机抢占声音通道后自动恢复"), icon: ("arrow.triangle.branch", .systemBlue), handlebarRouteSwitch)
                 ]),
-                SettingsSection(footer: CWL("ENT 键经车机蓝牙发来播放/暂停命令，iOS 会因此把声音路由切到车机蓝牙。开启后命令被拦截，改用 CarPlay 媒体键在手机上执行播放/暂停：暂停功能保留，但不会切换声音输出通道；蓝牙耳机的播放键也照常工作（同样经 CarPlay 转发）。来电响铃或通话中按任意方向键 = 接听/挂断。"), [
+                SettingsSection(footer: CWL("ENT 的播放/暂停命令由系统交给正在播放的音乐 App 处理，iOS 收到「播放」会把声音路由切到车机蓝牙——这是系统行为，命令本身拦不住。开启自动恢复后：扬声器被切走会自动切回扬声器；蓝牙耳机被切走时 iOS 无法自动选回指定蓝牙设备（系统限制），请从控制中心选回。10 秒内不会反复抢，避免干扰你的手动切换。来电响铃或通话中按任意方向键 = 接听/挂断。"), [
                     .info(CWL("上次按键"), handlebarLastEvent.isEmpty ? CWL("尚未触发") : handlebarLastEvent)
                 ])
             ]
@@ -2259,7 +2267,13 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
             stop()
         }
     }
-    @objc private func copyLog() { UIPasteboard.general.string = lines.joined(separator: "\n") }
+    @objc private func copyLog() {
+        var text = lines.joined(separator: "\n")
+        if !handlebarEventHistory.isEmpty {
+            text = ([CWL("—— 车把按键事件（最近 20 条）——")] + handlebarEventHistory + ["", CWL("—— 完整日志（最近 200 条）——")] + lines).joined(separator: "\n")
+        }
+        UIPasteboard.general.string = text
+    }
     private func log(_ message: String) {
         let timestamp = DateFormatter.localizedString(from: Date(), dateStyle: .none, timeStyle: .medium)
         lines.append("\(timestamp)  \(message)"); if lines.count > 200 { lines.removeFirst(lines.count - 200) }

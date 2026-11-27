@@ -19407,6 +19407,116 @@
         }
       },
       "extractionState": "manual"
+    },
+    "车把按键桥已启用（短按切歌 · 按住微调音量 · 长按 2 秒调音量）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar bridge enabled (tap skips · hold fine-tunes · hold 2 s adjusts volume)"
+          }
+        }
+      }
+    },
+    "车机抢占声音通道后自动恢复": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto-restore audio route when the bike takes over"
+          }
+        }
+      }
+    },
+    "车把按住（窗口内第 {1} 次步进）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar held (step {1} in window)"
+          }
+        }
+      }
+    },
+    "车把多步进（{1} 步 / {2} 秒）→ 保持音量": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar multi-step ({1} steps / {2} s) → keeping volume"
+          }
+        }
+      }
+    },
+    "车机抢占声音通道 → 已恢复扬声器输出": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bike took over the audio route → speaker output restored"
+          }
+        }
+      }
+    },
+    "车机抢占了声音通道（原输出：{1}）。iOS 无法自动切回蓝牙设备，请在控制中心选回": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bike took over the audio route (was: {1}). iOS can't switch back to a Bluetooth device automatically — reselect it in Control Center"
+          }
+        }
+      }
+    },
+    "—— 车把按键事件（最近 20 条）——": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "—— Handlebar key events (last 20) ——"
+          }
+        }
+      }
+    },
+    "—— 完整日志（最近 200 条）——": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "—— Full log (last 200) ——"
+          }
+        }
+      }
+    },
+    "450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进：单次按键 0.5 秒内确认 → 切歌（CarPlay 媒体键）并复位音量；0.5 秒内连续 3 次步进视为按住 → 松手音量保持（有意微调）；按住累计 2 秒 → 音量调整模式，松手结束。切歌略有延迟属正常。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The 450SR handlebar up/down keys change the iPhone volume over bike Bluetooth while mirroring. This feature watches the volume steps: a single tap confirms within 0.5 s → skip track (CarPlay media key) and restore the volume; 3 steps within 0.5 s counts as holding → volume stays after release (intended nudge); holding for 2 s total → volume adjust mode, ends on release. A slight skip delay is normal."
+          }
+        }
+      }
+    },
+    "ENT 的播放/暂停命令由系统交给正在播放的音乐 App 处理，iOS 收到「播放」会把声音路由切到车机蓝牙——这是系统行为，命令本身拦不住。开启自动恢复后：扬声器被切走会自动切回扬声器；蓝牙耳机被切走时 iOS 无法自动选回指定蓝牙设备（系统限制），请从控制中心选回。10 秒内不会反复抢，避免干扰你的手动切换。来电响铃或通话中按任意方向键 = 接听/挂断。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ENT play/pause commands are handled by the currently playing music app; when iOS receives \"play\" it switches the audio route to the bike — system behavior that cannot be intercepted. With auto-restore on: a speaker route is switched back automatically; when headphones get taken over, iOS cannot reselect a specific Bluetooth device (system limit) — pick it again in Control Center. The bike will not grab the route again within 10 s, so manual switching stays possible. While a call rings or is active, any direction key = answer/hang up."
+          }
+        }
+      }
     }
   },
   "version": "1.0"
