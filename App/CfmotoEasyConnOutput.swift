@@ -133,6 +133,9 @@ final class CfmotoEasyConnOutput {
         /// 车机 Wi-Fi 尚未就绪（noWifiAddress）时的自动重试计数与任务。
         private var noWifiRetries = 0
         private var restartTask: Task<Void, Never>?
+        /// 快速重试上限；之后转入慢速档长期等待（例如人走到车边，iPhone 还挂着家里 Wi-Fi）。
+        private static let fastRetries = 15
+        private static let slowRetries = 40
 
         func cancel() {
             lock.withLock { cancelled = true }
@@ -225,17 +228,23 @@ final class CfmotoEasyConnOutput {
         }
 
         /// 手机还没拿到车机 Wi-Fi 的网段地址时，协议栈会直接终态失败。
-        /// 这里自动软重启会话等 Wi-Fi 就绪，避免「Wi-Fi 没连上就要重启 App」。
+        /// 这里自动软重启会话等 Wi-Fi 就绪：先快速重试 1 分钟，再慢速等约 8 分钟。
         private func scheduleNoWifiRetry() {
             guard active, restartTask == nil else { return }
-            guard noWifiRetries < 15 else {
-                report("等待车机 Wi-Fi 超过 1 分钟仍未就绪，已停止自动重试。请检查 iPhone 是否连上仪表热点后再启动。")
+            let limit = Self.fastRetries + Self.slowRetries
+            guard noWifiRetries < limit else {
+                report("等待车机 Wi-Fi 超过 9 分钟仍未就绪，已停止自动重试。请检查 iPhone 是否连上仪表热点后再启动。")
                 return
             }
             noWifiRetries += 1
-            report("尚未拿到车机 Wi-Fi 网段地址，4 秒后自动重试（第 \(noWifiRetries)/15 次）…")
+            if noWifiRetries <= Self.fastRetries {
+                report("尚未拿到车机 Wi-Fi 网段地址，4 秒后自动重试（第 \(noWifiRetries)/\(limit) 次）…")
+            } else if (noWifiRetries - Self.fastRetries) % 5 == 1 {
+                report("仍在等待车机 Wi-Fi（iPhone 可能还连着家里 Wi-Fi）。可下拉控制中心关一下 Wi-Fi 再开，会立刻切到车机热点。")
+            }
+            let delay: UInt64 = noWifiRetries <= Self.fastRetries ? 4_000_000_000 : 12_000_000_000
             restartTask = Task { [weak self] in
-                try? await Task.sleep(nanoseconds: 4_000_000_000)
+                try? await Task.sleep(nanoseconds: delay)
                 guard !Task.isCancelled else { return }
                 guard let self, self.active else { return }
                 self.lock.lock(); self.restartTask = nil; self.lock.unlock()
