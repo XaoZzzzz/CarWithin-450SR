@@ -608,6 +608,38 @@
         }
       }
     },
+    "BMS 统计与记录": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BMS statistics and records"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BMS 统计与记录"
+          }
+        }
+      }
+    },
+    "BMS 统计预览": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BMS statistics preview"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BMS 统计预览"
+          }
+        }
+      }
+    },
     "Bonjour 注册状态：{1}": {
       "extractionState": "manual",
       "localizations": {
@@ -2512,6 +2544,17 @@
         }
       }
     },
+    "Wi-Fi 触发只对仪表网段生效；未选仪表输出时请先在「当前输出」里选好。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wi-Fi triggering only applies to dash subnets; select the dash under Output first."
+          }
+        }
+      }
+    },
     "Wi-Fi 预设": {
       "extractionState": "manual",
       "localizations": {
@@ -3463,6 +3506,17 @@
         }
       }
     },
+    "上次触发": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last trigger"
+          }
+        }
+      }
+    },
     "上次设备：{1}": {
       "extractionState": "manual",
       "localizations": {
@@ -3837,6 +3891,22 @@
         }
       }
     },
+    "九号 4.3 寸": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ninebot 4.3-inch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "九号 4.3 寸"
+          }
+        }
+      }
+    },
     "九号 4.3 寸 JPEG：已发送 {1} 帧，发送丢弃 {2} 帧，当前 {3} 字节": {
       "extractionState": "manual",
       "localizations": {
@@ -4177,6 +4247,22 @@
         }
       }
     },
+    "今天": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今天"
+          }
+        }
+      }
+    },
     "从 HTTP 接收页开始": {
       "extractionState": "manual",
       "localizations": {
@@ -4240,6 +4326,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "仪表 IP 地址"
+          }
+        }
+      }
+    },
+    "仪表 Wi-Fi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dash Wi-Fi"
+          }
+        }
+      }
+    },
+    "仪表 Wi-Fi 就绪也自动启动": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto start when dash Wi-Fi is ready"
           }
         }
       }
@@ -5120,6 +5228,22 @@
         }
       }
     },
+    "先开启 BMS": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enable BMS first"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "先开启 BMS"
+          }
+        }
+      }
+    },
     "先核对两台设备的 Wi-Fi 和首页地址。能打开但没画面时，先试 HTTP，再把画面设为 H.264、720P、30 帧。": {
       "extractionState": "manual",
       "localizations": {
@@ -5150,6 +5274,70 @@
           "stringUnit": {
             "state": "translated",
             "value": "全屏显示"
+          }
+        }
+      }
+    },
+    "全部时间": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All time"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部时间"
+          }
+        }
+      }
+    },
+    "全部状态": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All statuses"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部状态"
+          }
+        }
+      }
+    },
+    "全部设备": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All devices"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部设备"
+          }
+        }
+      }
+    },
+    "全部车辆": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All vehicles"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部车辆"
           }
         }
       }
@@ -5695,6 +5883,22 @@
         }
       }
     },
+    "包含区间极值": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Includes interval extrema"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "包含区间极值"
+          }
+        }
+      }
+    },
     "匹配私钥": {
       "extractionState": "manual",
       "localizations": {
@@ -5893,6 +6097,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "参数集过大"
+          }
+        }
+      }
+    },
+    "反馈与建议": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback & Suggestions"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "反馈与建议"
           }
         }
       }
@@ -6181,6 +6401,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "受信任证书"
+          }
+        }
+      }
+    },
+    "只在你已选好仪表输出、且本机 CarPlay 未启动时触发。自动启动后手动点「停止」不会再自动启动，直到蓝牙或 Wi-Fi 重新连接。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Triggers only with a dash output selected and local CarPlay stopped. After a manual stop, auto start stays off until the Bluetooth or Wi-Fi trigger disappears."
           }
         }
       }
@@ -7719,6 +7950,22 @@
         }
       }
     },
+    "复制内容": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy content"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "复制内容"
+          }
+        }
+      }
+    },
     "复制日志": {
       "extractionState": "manual",
       "localizations": {
@@ -8278,6 +8525,17 @@
         }
       }
     },
+    "尚未触发": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not triggered yet"
+          }
+        }
+      }
+    },
     "尚未记录": {
       "extractionState": "manual",
       "localizations": {
@@ -8425,6 +8683,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "已保存到相册"
+          }
+        }
+      }
+    },
+    "已保存片段": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved fragment"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已保存片段"
+          }
+        }
+      }
+    },
+    "已保存设备": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saved device"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已保存设备"
           }
         }
       }
@@ -8747,6 +9037,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "已生成 MFiSAP 响应，正在等待 iPhone 接受"
+          }
+        }
+      }
+    },
+    "已结束": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finished"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已结束"
           }
         }
       }
@@ -9082,6 +9388,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "开启后，同一局域网的浏览器可以查看并触控 CarPlay。"
+          }
+        }
+      }
+    },
+    "开始新记录": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start a new session"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "开始新记录"
           }
         }
       }
@@ -9663,6 +9985,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "抖音"
+          }
+        }
+      }
+    },
+    "报告生成失败": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not generate report"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "报告生成失败"
           }
         }
       }
@@ -10310,6 +10648,22 @@
         }
       }
     },
+    "收到数据后显示电压趋势": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltage trend appears when data arrives"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "收到数据后显示电压趋势"
+          }
+        }
+      }
+    },
     "收到视频帧后显示层仍未就绪": {
       "extractionState": "manual",
       "localizations": {
@@ -10390,6 +10744,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "文件校验失败，请重新下载。"
+          }
+        }
+      }
+    },
+    "断开后自动停止": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto stop when disconnected"
           }
         }
       }
@@ -10768,6 +11133,22 @@
         }
       }
     },
+    "无法导出": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not export"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法导出"
+          }
+        }
+      }
+    },
     "无法生成九号 4.3 寸画面": {
       "extractionState": "manual",
       "localizations": {
@@ -11006,6 +11387,22 @@
         }
       }
     },
+    "旧版抽样，可能遗漏瞬时压降": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legacy samples may omit brief voltage drops"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "旧版抽样，可能遗漏瞬时压降"
+          }
+        }
+      }
+    },
     "时钟同步对端地址": {
       "extractionState": "manual",
       "localizations": {
@@ -11036,6 +11433,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "时钟同步端口"
+          }
+        }
+      }
+    },
+    "时间": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "时间"
+          }
+        }
+      }
+    },
+    "春风 5 寸": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CFMOTO 5-inch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "春风 5 寸"
+          }
+        }
+      }
+    },
+    "春风 6.2 寸": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CFMOTO 6.2-inch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "春风 6.2 寸"
           }
         }
       }
@@ -11272,6 +11717,38 @@
           "stringUnit": {
             "state": "translated",
             "value": "最近 200 条，不含 Wi-Fi 密码和 MFi 私钥。"
+          }
+        }
+      }
+    },
+    "最近 30 天": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last 30 days"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近 30 天"
+          }
+        }
+      }
+    },
+    "最近 7 天": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last 7 days"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最近 7 天"
           }
         }
       }
@@ -11852,6 +12329,38 @@
         }
       }
     },
+    "本次电压趋势": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Session voltage trend"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本次电压趋势"
+          }
+        }
+      }
+    },
+    "本次统计": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Session statistics"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本次统计"
+          }
+        }
+      }
+    },
     "本次连接已自动重启 2 次，不再重启：{1}": {
       "extractionState": "manual",
       "localizations": {
@@ -11920,6 +12429,22 @@
         }
       }
     },
+    "极核 AE2 Pro 5 寸": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZEEHO AE2 Pro 5-inch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "极核 AE2 Pro 5 寸"
+          }
+        }
+      }
+    },
     "极核 AE4 MAX2+ 6.2 寸": {
       "extractionState": "manual",
       "localizations": {
@@ -11933,6 +12458,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "极核 AE4 MAX2+ 6.2 寸"
+          }
+        }
+      }
+    },
+    "极核 SE+ 5/5.5 寸": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ZEEHO SE+ 5/5.5-inch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "极核 SE+ 5/5.5 寸"
           }
         }
       }
@@ -12221,6 +12762,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "检查这台 iPhone 是否允许 App 发布本机 iAP2 配件端点（本机 CarPlay 的前提）。CarPlay 运行中不能测试。"
+          }
+        }
+      }
+    },
+    "检测到{1}，正在等待仪表 Wi-Fi…": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found {1}, waiting for dash Wi-Fi…"
+          }
+        }
+      }
+    },
+    "检测到{1}，请先在「设置 → 当前输出」选择春风仪表再自动启动": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found {1}. Select a CFMOTO dash under Settings > Output before auto start"
           }
         }
       }
@@ -12561,6 +13124,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在等待车机连接…"
+          }
+        }
+      }
+    },
+    "正在记录": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在记录"
           }
         }
       }
@@ -13294,6 +13873,22 @@
         }
       }
     },
+    "状态": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状态"
+          }
+        }
+      }
+    },
     "用 iPhone 当前的声音输出。想让车机出声，请先配对并选中车机蓝牙。": {
       "extractionState": "manual",
       "localizations": {
@@ -13358,6 +13953,54 @@
           "stringUnit": {
             "state": "translated",
             "value": "由接收画面的设备播放。画面自动播放后，若网页提示「开启声音」，点一下即可。"
+          }
+        }
+      }
+    },
+    "电压 CSV 预览": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltage CSV preview"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "电压 CSV 预览"
+          }
+        }
+      }
+    },
+    "电池记录": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery record"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "电池记录"
+          }
+        }
+      }
+    },
+    "电池设备": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Battery device"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "电池设备"
           }
         }
       }
@@ -13562,6 +14205,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "画面计划：{1}×{2} @ {3} FPS {4}（{5}{6}）"
+          }
+        }
+      }
+    },
+    "留空匹配任意蓝牙": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leave empty to match any Bluetooth audio"
           }
         }
       }
@@ -13906,6 +14560,38 @@
         }
       }
     },
+    "等待新的 BMS 实时数据": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for new BMS readings"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "等待新的 BMS 实时数据"
+          }
+        }
+      }
+    },
+    "等待电压数据": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for voltage data"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "等待电压数据"
+          }
+        }
+      }
+    },
     "等待视频拉帧请求": {
       "extractionState": "manual",
       "localizations": {
@@ -13936,6 +14622,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "等待首帧：视频 TCP 已读 {1} 字节，第 {2} 次关键帧请求{3}"
+          }
+        }
+      }
+    },
+    "筛选历史": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filter history"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "筛选历史"
           }
         }
       }
@@ -14121,6 +14823,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "绑定 {1}:{2}"
+          }
+        }
+      }
+    },
+    "结束并保存本次记录": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Finish and save session"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "结束并保存本次记录"
           }
         }
       }
@@ -14463,6 +15181,39 @@
         }
       }
     },
+    "自动停止：仪表 Wi-Fi 已断开": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto stop: dash Wi-Fi lost"
+          }
+        }
+      }
+    },
+    "自动启动": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto start"
+          }
+        }
+      }
+    },
+    "自动启动：{1} 已就绪，开始启动 CarPlay 与「{2}」投屏": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto start: {1} ready, starting CarPlay and casting to \"{2}\""
+          }
+        }
+      }
+    },
     "自动帧率根据主网页选择 30 或 60 FPS。支持 H.265 的主网页会优先使用 H.265。": {
       "extractionState": "manual",
       "localizations": {
@@ -14547,6 +15298,17 @@
         }
       }
     },
+    "蓝牙 + 仪表 Wi-Fi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth + dash Wi-Fi"
+          }
+        }
+      }
+    },
     "蓝牙写入失败": {
       "extractionState": "manual",
       "localizations": {
@@ -14560,6 +15322,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "蓝牙写入失败"
+          }
+        }
+      }
+    },
+    "蓝牙名称包含": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bluetooth name contains"
           }
         }
       }
@@ -15277,6 +16050,22 @@
         }
       }
     },
+    "记录中": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recording"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "记录中"
+          }
+        }
+      }
+    },
     "记录帮助改进代码、适配车型的朋友及其贡献。": {
       "localizations": {
         "en": {
@@ -15289,6 +16078,22 @@
           "stringUnit": {
             "state": "translated",
             "value": "记录帮助改进代码、适配车型的朋友及其贡献。"
+          }
+        }
+      }
+    },
+    "记录预览": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Record preview"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "记录预览"
           }
         }
       }
@@ -16694,6 +17499,28 @@
         }
       }
     },
+    "车机蓝牙": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bike Bluetooth"
+          }
+        }
+      }
+    },
+    "车机蓝牙 {1}": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bike Bluetooth {1}"
+          }
+        }
+      }
+    },
     "车机要求内容加密": {
       "extractionState": "manual",
       "localizations": {
@@ -16975,6 +17802,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "这份名单由作者旗下多个项目共用，感谢你帮助项目持续改进。"
+          }
+        }
+      }
+    },
+    "连上车机蓝牙后自动启动": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto start when bike Bluetooth connects"
           }
         }
       }
@@ -17724,6 +18562,54 @@
         }
       }
     },
+    "预览并导出完整统计 JSON": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview and export full statistics JSON"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "预览并导出完整统计 JSON"
+          }
+        }
+      }
+    },
+    "预览并导出本次统计": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview and export session"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "预览并导出本次统计"
+          }
+        }
+      }
+    },
+    "预览并导出电压 CSV": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preview and export voltage CSV"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "预览并导出电压 CSV"
+          }
+        }
+      }
+    },
     "预设比例": {
       "extractionState": "manual",
       "localizations": {
@@ -17975,694 +18861,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "，在系统「设置」搜索「安装证书」，选择「CA 证书」，安装下载的文件。不同机型的菜单名称可能不同。安装后用支持系统用户证书的浏览器打开 HTTPS 接收页。"
-          }
-        }
-      }
-    },
-    "九号 4.3 寸": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ninebot 4.3-inch"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "九号 4.3 寸"
-          }
-        }
-      }
-    },
-    "极核 SE+ 5/5.5 寸": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ZEEHO SE+ 5/5.5-inch"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "极核 SE+ 5/5.5 寸"
-          }
-        }
-      }
-    },
-    "极核 AE2 Pro 5 寸": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ZEEHO AE2 Pro 5-inch"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "极核 AE2 Pro 5 寸"
-          }
-        }
-      }
-    },
-    "春风 5 寸": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CFMOTO 5-inch"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "春风 5 寸"
-          }
-        }
-      }
-    },
-    "春风 6.2 寸": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CFMOTO 6.2-inch"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "春风 6.2 寸"
-          }
-        }
-      }
-    },
-    "反馈与建议": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Feedback & Suggestions"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "反馈与建议"
-          }
-        }
-      }
-    },
-    "BMS 统计与记录": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "BMS statistics and records"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "BMS 统计与记录"
-          }
-        }
-      }
-    },
-    "本次统计": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Session statistics"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "本次统计"
-          }
-        }
-      }
-    },
-    "正在记录": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Recording"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "正在记录"
-          }
-        }
-      }
-    },
-    "结束并保存本次记录": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Finish and save session"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "结束并保存本次记录"
-          }
-        }
-      }
-    },
-    "开始新记录": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Start a new session"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "开始新记录"
-          }
-        }
-      }
-    },
-    "先开启 BMS": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Enable BMS first"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "先开启 BMS"
-          }
-        }
-      }
-    },
-    "预览并导出本次统计": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preview and export session"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预览并导出本次统计"
-          }
-        }
-      }
-    },
-    "BMS 统计预览": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "BMS statistics preview"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "BMS 统计预览"
-          }
-        }
-      }
-    },
-    "复制内容": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Copy content"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "复制内容"
-          }
-        }
-      }
-    },
-    "预览并导出电压 CSV": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preview and export voltage CSV"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预览并导出电压 CSV"
-          }
-        }
-      }
-    },
-    "电压 CSV 预览": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voltage CSV preview"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "电压 CSV 预览"
-          }
-        }
-      }
-    },
-    "预览并导出完整统计 JSON": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Preview and export full statistics JSON"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "预览并导出完整统计 JSON"
-          }
-        }
-      }
-    },
-    "记录预览": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Record preview"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "记录预览"
-          }
-        }
-      }
-    },
-    "筛选历史": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Filter history"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "筛选历史"
-          }
-        }
-      }
-    },
-    "全部车辆": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "All vehicles"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全部车辆"
-          }
-        }
-      }
-    },
-    "电池设备": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Battery device"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "电池设备"
-          }
-        }
-      }
-    },
-    "全部设备": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "All devices"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全部设备"
-          }
-        }
-      }
-    },
-    "已保存设备": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saved device"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已保存设备"
-          }
-        }
-      }
-    },
-    "时间": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Time"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "时间"
-          }
-        }
-      }
-    },
-    "状态": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Status"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "状态"
-          }
-        }
-      }
-    },
-    "全部时间": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "All time"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全部时间"
-          }
-        }
-      }
-    },
-    "今天": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Today"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "今天"
-          }
-        }
-      }
-    },
-    "最近 7 天": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Last 7 days"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "最近 7 天"
-          }
-        }
-      }
-    },
-    "最近 30 天": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Last 30 days"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "最近 30 天"
-          }
-        }
-      }
-    },
-    "全部状态": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "All statuses"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "全部状态"
-          }
-        }
-      }
-    },
-    "已结束": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Finished"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已结束"
-          }
-        }
-      }
-    },
-    "已保存片段": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Saved fragment"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "已保存片段"
-          }
-        }
-      }
-    },
-    "记录中": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Recording"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "记录中"
-          }
-        }
-      }
-    },
-    "无法导出": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not export"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "无法导出"
-          }
-        }
-      }
-    },
-    "报告生成失败": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Could not generate report"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "报告生成失败"
-          }
-        }
-      }
-    },
-    "收到数据后显示电压趋势": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Voltage trend appears when data arrives"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "收到数据后显示电压趋势"
-          }
-        }
-      }
-    },
-    "本次电压趋势": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Session voltage trend"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "本次电压趋势"
-          }
-        }
-      }
-    },
-    "等待电压数据": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waiting for voltage data"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "等待电压数据"
-          }
-        }
-      }
-    },
-    "包含区间极值": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Includes interval extrema"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "包含区间极值"
-          }
-        }
-      }
-    },
-    "旧版抽样，可能遗漏瞬时压降": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Legacy samples may omit brief voltage drops"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "旧版抽样，可能遗漏瞬时压降"
-          }
-        }
-      }
-    },
-    "等待新的 BMS 实时数据": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Waiting for new BMS readings"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "等待新的 BMS 实时数据"
-          }
-        }
-      }
-    },
-    "电池记录": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Battery record"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "电池记录"
           }
         }
       }

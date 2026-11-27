@@ -343,6 +343,18 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private static let releasesURL = projectURL.appendingPathComponent("releases")
     private static let authorURL = URL(string: "https://v.douyin.com/x64M2NbYj0A/")!
     private var lines: [String] = []
+
+    // MARK: 自动启动（连车机蓝牙 / 仪表 Wi-Fi）
+    private let autoStartBluetoothSwitch = UISwitch()
+    private let autoStartWiFiSwitch = UISwitch()
+    private let autoStopSwitch = UISwitch()
+    private let autoStartNameField = UITextField()
+    private let autoStart = AutoStartCoordinator()
+    /// 手动停止后抑制自动启动，直到触发条件消失。
+    private var autoStartSuppressed = false
+    private var autoStartInProgress = false
+    private var autoStartLastTrigger = ""
+    private var lastDashboardSeen = Date()
     private var launchedTransportTest = false
 
     override func viewDidAppear(_ animated: Bool) {
@@ -454,6 +466,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         heroStack.layer.cornerRadius = 24; heroStack.layer.cornerCurve = .continuous
         let stack = UIStackView(arrangedSubviews: [heroStack])
         configureSettingsControls()
+        configureAutoStart()
         if #available(iOS 17.0, *) {
             registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, _: UITraitCollection) in self.applyAppearance() }
         }
@@ -1538,8 +1551,131 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
             log(CWL("无法保存身份导入结果：{1}", [String(describing: error.localizedDescription)]))
         }
     }
+    // MARK: 自动启动
+
+    private func configureAutoStart() {
+        let defaults = UserDefaults.standard
+        autoStartBluetoothSwitch.isOn = defaults.object(forKey: "autoStartOnBluetooth") as? Bool ?? true
+        autoStartWiFiSwitch.isOn = defaults.object(forKey: "autoStartOnWiFi") as? Bool ?? true
+        autoStopSwitch.isOn = defaults.object(forKey: "autoStopOnDisconnect") as? Bool ?? true
+        autoStartNameField.text = defaults.string(forKey: "autoStartBluetoothName") ?? "CFMOTO"
+        autoStartNameField.keyboardType = .asciiCapable
+        autoStartNameField.autocorrectionType = .no
+        autoStartNameField.autocapitalizationType = .none
+        [autoStartBluetoothSwitch, autoStartWiFiSwitch, autoStopSwitch].forEach {
+            $0.addTarget(self, action: #selector(autoStartSettingsChanged), for: .valueChanged)
+        }
+        autoStartNameField.addTarget(self, action: #selector(autoStartNameChanged), for: .editingDidEnd)
+        autoStart.nameFilter = autoStartNameField.text ?? ""
+        autoStart.onStateChanged = { [weak self] state in self?.handleAutoStart(state) }
+        autoStart.onTick = { [weak self] in self?.autoStopIfDashboardLost() }
+        autoStart.start()
+    }
+
+    @objc private func autoStartSettingsChanged() {
+        let defaults = UserDefaults.standard
+        defaults.set(autoStartBluetoothSwitch.isOn, forKey: "autoStartOnBluetooth")
+        defaults.set(autoStartWiFiSwitch.isOn, forKey: "autoStartOnWiFi")
+        defaults.set(autoStopSwitch.isOn, forKey: "autoStopOnDisconnect")
+        reloadVisibleSettings()
+    }
+
+    @objc private func autoStartNameChanged() {
+        UserDefaults.standard.set(autoStartNameField.text ?? "", forKey: "autoStartBluetoothName")
+        autoStart.nameFilter = autoStartNameField.text ?? ""
+    }
+
+    private func handleAutoStart(_ state: AutoStartCoordinator.State) {
+        let bluetoothHit = autoStartBluetoothSwitch.isOn ? state.bluetoothName : nil
+        let wifiReady = state.wifiIPv4.map(isDashboardNetwork) ?? false
+        // Wi-Fi 单独触发只对已选仪表的输出有意义，避免在家用网段误启动。
+        let wifiHit = autoStartWiFiSwitch.isOn && wifiReady && outputMode.usesInstrumentWiFi
+        if bluetoothHit == nil && !wifiReady { autoStartSuppressed = false }
+        guard !running, !waitingForNetwork else { return }
+        guard !autoStartSuppressed, identity != nil,
+              bluetoothHit != nil || wifiHit else { return }
+        guard outputMode.usesInstrumentWiFi else {
+            statusLabel.text = CWL("检测到{1}，请先在「设置 → 当前输出」选择春风仪表再自动启动", [bluetoothHit.map { CWL("车机蓝牙 {1}", [$0]) } ?? CWL("仪表 Wi-Fi")])
+            return
+        }
+        // 只有手机拿到仪表网段的地址才开投，避免在家里 Wi-Fi 上被蓝牙耳机之类的设备触发。
+        guard let address = localCarPlayAddress, isDashboardNetwork(address) else {
+            statusLabel.text = CWL("检测到{1}，正在等待仪表 Wi-Fi…", [bluetoothHit.map { CWL("车机蓝牙 {1}", [$0]) } ?? CWL("仪表 Wi-Fi")])
+            return
+        }
+        beginAutoStart(trigger: bluetoothHit.map { CWL("车机蓝牙 {1}", [$0]) } ?? CWL("仪表 Wi-Fi"))
+    }
+
+    /// 仪表 Wi-Fi 掉线 6 秒后才停，避开路由切换时的瞬时断流。
+    private func autoStopIfDashboardLost() {
+        guard autoStopSwitch.isOn, outputMode.usesInstrumentWiFi else { return }
+        // 未运行时持续刷新基准，避免长时间空闲后一开投就按旧时间戳判停。
+        guard running || waitingForNetwork else {
+            lastDashboardSeen = Date()
+            return
+        }
+        if let address = ReceiverConfiguration.wifiIPv4Address(), isDashboardNetwork(address) {
+            lastDashboardSeen = Date()
+            return
+        }
+        guard Date().timeIntervalSince(lastDashboardSeen) >= 6 else { return }
+        log(CWL("自动停止：仪表 Wi-Fi 已断开"))
+        stop()
+    }
+
+    /// 自动查找仪表 IP 的型号没有固定目标网段，此时无法判定；非仪表输出返回 nil。
+    private var autoStartDashboardAddress: String? {
+        func value(_ field: UITextField, _ fallback: String) -> String {
+            let text = field.text?.trimmingCharacters(in: .whitespaces) ?? ""
+            return text.isEmpty ? fallback : text
+        }
+        switch outputMode {
+        case .cfmoto5, .cfmoto62: return value(cfmotoAddressField, "192.168.0.1")
+        case .tailing: return value(tailingAddressField, "192.168.1.1")
+        case .ninebot43: return value(ninebot43AddressField, "192.168.169.1")
+        case .ninebot, .ninebotSeven: return value(ninebotAddressField, "192.168.1.1")
+        default: return nil
+        }
+    }
+
+    /// 自动启动只认仪表网段：手机连在家里 Wi-Fi 时不应开投屏。
+    private func isDashboardNetwork(_ ip: String) -> Bool {
+        func subnet(_ address: String) -> String {
+            address.split(separator: ".").prefix(3).joined(separator: ".")
+        }
+        guard let target = autoStartDashboardAddress else { return false }
+        return subnet(ip) == subnet(target)
+    }
+
+    private func beginAutoStart(trigger: String) {
+        autoStartLastTrigger = trigger
+        log(CWL("自动启动：{1} 已就绪，开始启动 CarPlay 与「{2}」投屏", [trigger, headUnitOutput.selectedTitle]))
+        autoStartInProgress = true
+        toggleReceiver()
+        autoStartInProgress = false
+    }
+
+    private func autoStartPage() -> SettingsPageController {
+        page(CWL("自动启动")) { [unowned self] in
+            [
+                SettingsSection(footer: CWL("只在你已选好仪表输出、且本机 CarPlay 未启动时触发。自动启动后手动点「停止」不会再自动启动，直到蓝牙或 Wi-Fi 重新连接。"), [
+                    .control(CWL("连上车机蓝牙后自动启动"), icon: ("dot.radiowaves.left.and.right", .systemBlue), autoStartBluetoothSwitch),
+                    SettingsRow.field(CWL("蓝牙名称包含"), autoStartNameField, placeholder: CWL("留空匹配任意蓝牙")),
+                    .control(CWL("仪表 Wi-Fi 就绪也自动启动"), icon: ("wifi", .systemBlue), autoStartWiFiSwitch),
+                    .control(CWL("断开后自动停止"), icon: ("stop.circle", .systemOrange), autoStopSwitch)
+                ]),
+                SettingsSection(footer: CWL("Wi-Fi 触发只对仪表网段生效；未选仪表输出时请先在「当前输出」里选好。"), [
+                    .info(CWL("上次触发"), autoStartLastTrigger.isEmpty ? CWL("尚未触发") : autoStartLastTrigger)
+                ])
+            ]
+        }
+    }
+
     @objc private func toggleReceiver() {
-        if running || waitingForNetwork { stop(); return }
+        if running || waitingForNetwork {
+            if !autoStartInProgress { autoStartSuppressed = true }
+            stop(); return
+        }
         if !restartingAutomatically { networkRestartCount = 0 }
         clearStartupHint()
         updateCheckTask?.cancel()
@@ -2402,6 +2538,11 @@ extension ReceiverViewController {
                 }) { [unowned self] in self.wifiForm(adding: true) })
             }
             connection.append(.page(CWL("Wi-Fi 预设"), icon: ("list.bullet", .systemBlue), detail: { WiFiPresetStore.selected()?.ssid ?? CWL("未选择") }) { [unowned self] in self.presetsPage() })
+            connection.append(.page(CWL("自动启动"), icon: ("bolt.fill", .systemYellow), detail: { [unowned self] in
+                if !self.autoStartBluetoothSwitch.isOn && !self.autoStartWiFiSwitch.isOn { return CWL("关闭") }
+                if self.autoStartBluetoothSwitch.isOn && self.autoStartWiFiSwitch.isOn { return CWL("蓝牙 + 仪表 Wi-Fi") }
+                return self.autoStartBluetoothSwitch.isOn ? CWL("车机蓝牙") : CWL("仪表 Wi-Fi")
+            }) { [unowned self] in self.autoStartPage() })
             connection.append(.control(CWL("当前输出"), icon: ("point.3.connected.trianglepath.dotted", .systemIndigo), headUnitOutput))
             connection.append(.page(CWL("输出设置"), icon: ("slider.horizontal.3", .systemGray)) { [unowned self] in self.headUnitPage() })
             if outputMode == .browser {
