@@ -356,6 +356,11 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private var autoStartLastTrigger = ""
     private var lastDashboardSeen = Date()
     private let hotspotAutoJoinSwitch = UISwitch()
+    // MARK: 车把按键（音量摇杆 → 切歌）
+    private let handlebarSwitch = UISwitch()
+    private let handlebarDirectionSwitch = UISwitch()
+    private let handlebarRestoreSwitch = UISwitch()
+    private var handlebarLastEvent = ""
     private var launchedTransportTest = false
 
     override func viewDidAppear(_ animated: Bool) {
@@ -1571,6 +1576,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         autoStart.onStateChanged = { [weak self] state in self?.handleAutoStart(state) }
         autoStart.onTick = { [weak self] in self?.autoStopIfDashboardLost() }
         autoStart.start()
+        configureHandlebar()
         hotspotAutoJoinSwitch.isOn = UserDefaults.standard.bool(forKey: "hotspotAutoJoinOn")
         hotspotAutoJoinSwitch.addTarget(self, action: #selector(hotspotAutoJoinChanged), for: .valueChanged)
     }
@@ -1618,6 +1624,53 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     @objc private func autoStartNameChanged() {
         UserDefaults.standard.set(autoStartNameField.text ?? "", forKey: "autoStartBluetoothName")
         autoStart.nameFilter = autoStartNameField.text ?? ""
+    }
+
+    // MARK: 车把按键（音量摇杆 → 切歌）
+
+    private func configureHandlebar() {
+        handlebarSwitch.isOn = HandlebarMediaBridge.shared().isEnabled
+        handlebarDirectionSwitch.isOn = UserDefaults.standard.bool(forKey: "handlebarSwapped")
+        handlebarRestoreSwitch.isOn = HandlebarMediaBridge.shared().restoresVolume
+        [handlebarSwitch, handlebarDirectionSwitch, handlebarRestoreSwitch].forEach {
+            $0.addTarget(self, action: #selector(handlebarSettingsChanged), for: .valueChanged)
+        }
+        HandlebarMediaBridge.shared().onEvent = { [weak self] message in
+            guard let self else { return }
+            self.handlebarLastEvent = message
+            self.log(message)
+        }
+    }
+
+    @objc private func handlebarSettingsChanged() {
+        let bridge = HandlebarMediaBridge.shared()
+        bridge.isEnabled = handlebarSwitch.isOn
+        bridge.restoresVolume = handlebarRestoreSwitch.isOn
+        UserDefaults.standard.set(handlebarDirectionSwitch.isOn, forKey: "handlebarSwapped")
+        // 方向交换通过反转上下动作实现。
+        let up: HandlebarMediaBridge.Action = handlebarDirectionSwitch.isOn ? .previousTrack : .nextTrack
+        let down: HandlebarMediaBridge.Action = handlebarDirectionSwitch.isOn ? .nextTrack : .previousTrack
+        bridge.upAction = up
+        bridge.downAction = down
+        // 运行中即时生效。
+        bridge.stop()
+        if running && bridge.isEnabled { bridge.start() }
+        reloadVisibleSettings()
+    }
+
+    private func handlebarPage() -> SettingsPageController {
+        page(CWL("车把按键")) { [unowned self] in
+            [
+                SettingsSection(footer: CWL("450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进并转换为切歌命令，转发给当前正在播放的音乐 App。开始投屏后生效。"), [
+                    .control(CWL("音量摇杆转换为切歌"), icon: ("music.note", .systemGreen), handlebarSwitch),
+                    .control(CWL("上=上一曲、下=下一曲"), icon: ("arrow.up.arrow.down", .systemBlue), handlebarDirectionSwitch),
+                    .control(CWL("切歌后恢复音量"), icon: ("speaker.wave.2", .systemOrange), handlebarRestoreSwitch)
+                ]),
+                SettingsSection(footer: CWL("来电接听不受此功能控制：iOS 不允许第三方 App 接听电话，请用车机蓝牙或 iPhone 侧边键；通话期间按键自动忽略。若切歌时音乐无声，请确认音乐 App 正在播放。"), [
+                    .info(CWL("上次按键"), handlebarLastEvent.isEmpty ? CWL("尚未触发") : handlebarLastEvent)
+                ])
+            ]
+        }
     }
 
     private func handleAutoStart(_ state: AutoStartCoordinator.State) {
@@ -1829,6 +1882,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         if keepAliveSwitch.isOn { keepAlive.start() }
         view.endEditing(true)
         running = true; modeControl.isEnabled = false; setEditing(false)
+        HandlebarMediaBridge.shared().start()
         antBMS.recordingVehicleName = headUnitOutput.selectedTitle
         antBMS.setReceiving(true)
         startButton.setTitle(CWL("停止接收"), for: .normal)
@@ -1909,6 +1963,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     }
 
     private func stop() {
+        HandlebarMediaBridge.shared().stop()
         antBMS.setReceiving(false)
         localStartupID = nil
         networkStartupTask?.cancel()
@@ -2578,6 +2633,10 @@ extension ReceiverViewController {
                 if self.autoStartBluetoothSwitch.isOn && self.autoStartWiFiSwitch.isOn { return CWL("蓝牙 + 仪表 Wi-Fi") }
                 return self.autoStartBluetoothSwitch.isOn ? CWL("车机蓝牙") : CWL("仪表 Wi-Fi")
             }) { [unowned self] in self.autoStartPage() })
+            connection.append(.page(CWL("车把按键"), icon: ("music.note", .systemGreen), detail: { [unowned self] in
+                if !HandlebarMediaBridge.shared().isEnabled { return CWL("关闭") }
+                return CWL("已启用")
+            }) { [unowned self] in self.handlebarPage() })
             connection.append(.control(CWL("当前输出"), icon: ("point.3.connected.trianglepath.dotted", .systemIndigo), headUnitOutput))
             connection.append(.page(CWL("输出设置"), icon: ("slider.horizontal.3", .systemGray)) { [unowned self] in self.headUnitPage() })
             if outputMode == .browser {

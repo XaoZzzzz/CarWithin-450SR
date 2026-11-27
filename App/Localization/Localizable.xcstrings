@@ -188,6 +188,17 @@
         }
       }
     },
+    "450SR 车把的上/下键在投屏时经车机蓝牙改变 iPhone 音量，本功能观察音量步进并转换为切歌命令，转发给当前正在播放的音乐 App。开始投屏后生效。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On the 450SR the handlebar up/down keys change the iPhone volume over the bike's Bluetooth while casting. This feature observes the volume steps, converts them to track-skip commands and forwards them to the currently playing music app. Active while casting."
+          }
+        }
+      }
+    },
     "480×272 · JPEG · 最高 10 FPS": {
       "extractionState": "manual",
       "localizations": {
@@ -3472,6 +3483,17 @@
         }
       }
     },
+    "上=上一曲、下=下一曲": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Up = previous, down = next"
+          }
+        }
+      }
+    },
     "上一曲": {
       "extractionState": "manual",
       "localizations": {
@@ -5608,6 +5630,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "分辨率"
+          }
+        }
+      }
+    },
+    "切歌后恢复音量": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore volume after skip"
           }
         }
       }
@@ -8855,6 +8888,17 @@
         }
       }
     },
+    "已启用": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On"
+          }
+        }
+      }
+    },
     "已启用（PCM/AAC/Opus）": {
       "extractionState": "manual",
       "localizations": {
@@ -10798,6 +10842,17 @@
         }
       }
     },
+    "无动作": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No action"
+          }
+        }
+      }
+    },
     "无法使用证书": {
       "extractionState": "manual",
       "localizations": {
@@ -12407,6 +12462,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "本次连接已自动重启 2 次，不再重启：{1}"
+          }
+        }
+      }
+    },
+    "来电接听不受此功能控制：iOS 不允许第三方 App 接听电话，请用车机蓝牙或 iPhone 侧边键；通话期间按键自动忽略。若切歌时音乐无声，请确认音乐 App 正在播放。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answering calls is not covered: iOS does not allow third-party apps to answer calls — use the bike Bluetooth or the iPhone side button. Key presses are ignored during calls. If skipping has no effect, make sure a music app is playing."
           }
         }
       }
@@ -17344,6 +17410,61 @@
         }
       }
     },
+    "车把「{1}」键 → {2}": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar \"{1}\" → {2}"
+          }
+        }
+      }
+    },
+    "车把切歌（{1}）未送达：当前没有正在播放的音乐 App": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Track skip ({1}) not delivered: no music app is playing"
+          }
+        }
+      }
+    },
+    "车把按键": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar buttons"
+          }
+        }
+      }
+    },
+    "车把按键桥已停用": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar bridge disabled"
+          }
+        }
+      }
+    },
+    "车把按键桥已启用（音量摇杆 → 切歌）": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handlebar bridge enabled (volume rocker → track skip)"
+          }
+        }
+      }
+    },
     "车机": {
       "extractionState": "manual",
       "localizations": {
@@ -18471,6 +18592,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "需要导入 MFi 身份"
+          }
+        }
+      }
+    },
+    "音量摇杆转换为切歌": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volume rocker to track skip"
           }
         }
       }
