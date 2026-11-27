@@ -355,6 +355,7 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
     private var autoStartInProgress = false
     private var autoStartLastTrigger = ""
     private var lastDashboardSeen = Date()
+    private let hotspotAutoJoinSwitch = UISwitch()
     private var launchedTransportTest = false
 
     override func viewDidAppear(_ animated: Bool) {
@@ -1570,6 +1571,40 @@ final class ReceiverViewController: UIViewController, CLLocationManagerDelegate 
         autoStart.onStateChanged = { [weak self] state in self?.handleAutoStart(state) }
         autoStart.onTick = { [weak self] in self?.autoStopIfDashboardLost() }
         autoStart.start()
+        hotspotAutoJoinSwitch.isOn = UserDefaults.standard.bool(forKey: "hotspotAutoJoinOn")
+        hotspotAutoJoinSwitch.addTarget(self, action: #selector(hotspotAutoJoinChanged), for: .valueChanged)
+    }
+
+    /// 自动加入车机热点：把当前预设的 SSID 写入系统 Wi-Fi 配置，车机通电后自动回连。
+    @objc private func hotspotAutoJoinChanged() {
+        let defaults = UserDefaults.standard
+        guard hotspotAutoJoinSwitch.isOn else {
+            let ssid: String? = HotspotAutoJoin.configuredSSID.isEmpty ? WiFiPresetStore.selected()?.ssid : HotspotAutoJoin.configuredSSID
+            if let ssid { HotspotAutoJoin.remove(ssid: ssid) }
+            defaults.set(false, forKey: "hotspotAutoJoinOn")
+            return
+        }
+        guard let preset = WiFiPresetStore.selected(),
+              let ssid = preset.ssid.trimmingCharacters(in: .whitespaces).isEmpty ? nil : preset.ssid else {
+            hotspotAutoJoinSwitch.isOn = false
+            defaults.set(false, forKey: "hotspotAutoJoinOn")
+            alert(CWL("无法开启"), CWL("请先在 Wi-Fi 预设里选中车机热点（DIRECT-go-CFMOTO-xxxx）。"))
+            return
+        }
+        let password = try? WiFiCredentials.password(for: ssid)
+        let open = preset.isOpen || (password ?? "").isEmpty
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            if let error = await HotspotAutoJoin.apply(ssid: ssid, password: password, open: open) {
+                self.hotspotAutoJoinSwitch.isOn = false
+                defaults.set(false, forKey: "hotspotAutoJoinOn")
+                self.alert(CWL("系统拒绝了 Wi-Fi 配置"), error)
+            } else {
+                defaults.set(true, forKey: "hotspotAutoJoinOn")
+                self.log(CWL("已配置自动加入 {1}，车机通电后会自动回连", [ssid]))
+            }
+            self.reloadVisibleSettings()
+        }
     }
 
     @objc private func autoStartSettingsChanged() {
@@ -2926,6 +2961,9 @@ extension ReceiverViewController {
             }
             var sections = [SettingsSection(footer: editable ? CWL("轻点选用，左滑后确认删除。") : editingLockedFooter, rows)]
             if editable {
+                sections.append(SettingsSection(footer: CWL("开启后 iPhone 会记住该车机热点，车机通电后自动回连，无需每次手动选择。首次开启需要系统确认。"), [
+                    .control(CWL("自动加入车机 Wi-Fi"), icon: ("wifi.router", .systemBlue), hotspotAutoJoinSwitch)
+                ]))
                 sections.append(SettingsSection([.page(CWL("编辑当前预设"), icon: ("pencil", .systemBlue)) { [unowned self] in self.wifiPage() }]))
             }
             return sections

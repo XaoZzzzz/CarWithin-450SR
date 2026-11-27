@@ -130,7 +130,14 @@ final class CfmotoEasyConnOutput {
 
         private var active: Bool { lock.withLock { !cancelled } }
 
-        func cancel() { lock.withLock { cancelled = true } }
+        /// 车机 Wi-Fi 尚未就绪（noWifiAddress）时的自动重试计数与任务。
+        private var noWifiRetries = 0
+        private var restartTask: Task<Void, Never>?
+
+        func cancel() {
+            lock.withLock { cancelled = true }
+            restartTask?.cancel(); restartTask = nil
+        }
 
         // MARK: 启动链路
 
@@ -204,16 +211,55 @@ final class CfmotoEasyConnOutput {
             case .awaitingCallback: message = "等待仪表回连…"
             case .handshaking: message = "握手中…"
             case .awaitingMedia: message = "等待仪表开流…"
-            case .streaming: message = "正在投屏 · \(profile.title) · H.264"
+            case .streaming:
+                noWifiRetries = 0
+                message = "正在投屏 · \(profile.title) · H.264"
             case .reconnecting(let attempt): message = "重连中（第 \(attempt) 次）…"
-            case .failed(let failure): message = "连接失败：\(failure.description)"
+            case .failed(let failure):
+                message = "连接失败：\(failure.description)"
+                if case .noWifiAddress = failure { scheduleNoWifiRetry() }
             case .stopped: message = "已停止"
             }
             report(message)
             if case .failed = state { onLog("\(profile.label)EasyConn \(message)") }
         }
 
+        /// 手机还没拿到车机 Wi-Fi 的网段地址时，协议栈会直接终态失败。
+        /// 这里自动软重启会话等 Wi-Fi 就绪，避免「Wi-Fi 没连上就要重启 App」。
+        private func scheduleNoWifiRetry() {
+            guard active, restartTask == nil else { return }
+            guard noWifiRetries < 15 else {
+                report("等待车机 Wi-Fi 超过 1 分钟仍未就绪，已停止自动重试。请检查 iPhone 是否连上仪表热点后再启动。")
+                return
+            }
+            noWifiRetries += 1
+            report("尚未拿到车机 Wi-Fi 网段地址，4 秒后自动重试（第 \(noWifiRetries)/15 次）…")
+            restartTask = Task { [weak self] in
+                try? await Task.sleep(nanoseconds: 4_000_000_000)
+                guard !Task.isCancelled else { return }
+                guard let self, self.active else { return }
+                self.lock.lock(); self.restartTask = nil; self.lock.unlock()
+                self.softRestart()
+            }
+        }
+
+        /// 停掉当前链路并重建（不清 acceptingFrames，帧管线随新会话自然重建）。
+        private func softRestart() {
+            lock.lock(); let current = link; link = nil; lock.unlock()
+            if let id = logSubscription { Log.shared.unsubscribe(id) }
+            logSubscription = nil
+            eventTask?.cancel(); eventTask = nil
+            current?.stop()
+            queue.sync {
+                decoder?.invalidate(); decoder = nil
+                encoder?.invalidate(); encoder = nil
+                latest = nil
+            }
+            start()
+        }
+
         func close() {
+            restartTask?.cancel(); restartTask = nil
             lock.withLock { acceptingFrames = false }
             if let id = logSubscription { Log.shared.unsubscribe(id) }
             eventTask?.cancel()

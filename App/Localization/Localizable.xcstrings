@@ -9260,6 +9260,17 @@
         }
       }
     },
+    "已配置自动加入 {1}，车机通电后会自动回连": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto join configured for {1}; the phone will rejoin automatically when the bike powers on"
+          }
+        }
+      }
+    },
     "希望保留金额但隐藏昵称，请备注「匿名」；不希望列入名单，请备注「不上名单」。也可以发邮件申请修改或移除。": {
       "localizations": {
         "en": {
@@ -9371,6 +9382,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "开发者共用名单"
+          }
+        }
+      }
+    },
+    "开启后 iPhone 会记住该车机热点，车机通电后自动回连，无需每次手动选择。首次开启需要系统确认。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone will remember the dash hotspot and rejoin automatically once the bike is powered on. iOS asks for confirmation the first time."
           }
         }
       }
@@ -11145,6 +11167,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "无法导出"
+          }
+        }
+      }
+    },
+    "无法开启": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot enable"
           }
         }
       }
@@ -14659,6 +14692,17 @@
         }
       }
     },
+    "系统拒绝了 Wi-Fi 配置": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "System rejected the Wi-Fi configuration"
+          }
+        }
+      }
+    },
     "系统状态变化": {
       "extractionState": "manual",
       "localizations": {
@@ -15188,6 +15232,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "Auto stop: dash Wi-Fi lost"
+          }
+        }
+      }
+    },
+    "自动加入车机 Wi-Fi": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auto join dash Wi-Fi"
           }
         }
       }
@@ -16400,6 +16455,17 @@
           "stringUnit": {
             "state": "translated",
             "value": "请先启动 CarPlay"
+          }
+        }
+      }
+    },
+    "请先在 Wi-Fi 预设里选中车机热点（DIRECT-go-CFMOTO-xxxx）。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select the dash hotspot (DIRECT-go-CFMOTO-xxxx) under Wi-Fi presets first."
           }
         }
       }
