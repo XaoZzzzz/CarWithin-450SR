@@ -14,6 +14,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Inject MFi identity (from repo secrets, not committed)
+        env:
+          MFI_CERT_P7B: ${{ secrets.MFI_CERT_P7B }}
+          MFI_LEAF_CER: ${{ secrets.MFI_LEAF_CER }}
+          MFI_PRIVATE_X963: ${{ secrets.MFI_PRIVATE_X963 }}
+        run: |
+          mkdir -p App/BundledIdentity
+          if [ -n "$MFI_CERT_P7B" ]; then
+            printf '%s' "$MFI_CERT_P7B" | base64 --decode > App/BundledIdentity/certificate.p7b
+            printf '%s' "$MFI_LEAF_CER" | base64 --decode > App/BundledIdentity/leaf.cer
+            printf '%s' "$MFI_PRIVATE_X963" | base64 --decode > App/BundledIdentity/private.x963
+            echo "MFi identity injected: $(ls -l App/BundledIdentity | wc -l | tr -d ' ') entries"
+          else
+            echo "No MFI secrets configured — building without bundled identity"
+          fi
+
       - name: Generate project
         run: python3 Tools/generate_project.py
 
